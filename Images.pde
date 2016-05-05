@@ -1,10 +1,10 @@
 int mTickRIGHT = 0;
 int mFrameRIGHT = 1;
 
-int mTickLEFT = 0;
+int mTickLEFT = 1;
 int mFrameLEFT = 1;
 
-int mFrame = 0;
+int mFrame = 1;
 
 
 
@@ -39,9 +39,9 @@ void harryAnimation() {
 
   if (goRight == 1 ) {
 
-    //if (mFrame >1) {
-//mFrame=1;
-  //  }
+    if (mFrame < 0) {
+      mFrame=1;
+    }
     mTickRIGHT++;
     if (mTickRIGHT > 5) {
       mTickRIGHT = 0;
@@ -54,11 +54,11 @@ void harryAnimation() {
 
 
   if (goLeft == 1 ) {
-//if(mFrame <-1){
- //mFrame=-1; 
-//}
+    //if(mFrame <-1){
+    //mFrame=-1; 
+    //}
     if (mFrame > 0) {
-      mFrame *=-1;
+      mFrame =-1;
     }
     mTickLEFT++;
     if (mTickLEFT > 5) {
@@ -78,9 +78,25 @@ void harryAnimation() {
 
 void harryDraw() {
 
-  if (jump ==1 ) {
+  if (jump ==1 && goRight == 1) {
     mFrame = 4;
   }
+
+  if (jump ==1 && goLeft == 1) {
+    mFrame = -4;
+  }
+
+  if (goRight == 0 && goLeft == 0) {
+    if (mFrame >= 2) {
+      mFrame = 1;
+    }
+
+    if (mFrame <= -2) {
+      mFrame = -1;
+    }
+  }
+
+
   if (mFrame == 1) {
     image(H1, gx - 3 - cameraX, gy-29, 62, 56);
   }
@@ -94,9 +110,7 @@ void harryDraw() {
     image(H4, gx - 3 - cameraX, gy-29, 62, 56);
   }
 
-  if (jump ==1 ) {
-    mFrame = 4;
-  }
+
   if (mFrame == -1) {
     image(H5, gx - 3 - cameraX, gy-29, 62, 56);
   }
