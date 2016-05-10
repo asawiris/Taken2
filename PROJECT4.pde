@@ -11,6 +11,7 @@ void setup() {
   imageMode(CENTER);
   sprite();
   //TITLE = loadImage("data/Title Page.png");
+  CLOUD1 = loadImage("data/cloud.png");
 }
 PImage TITLE;
 PImage H1 = new PImage(62, 56, ARGB);//standing
@@ -23,6 +24,7 @@ PImage H7 = new PImage(62, 56, ARGB);//moving 2\
 PImage H8 = new PImage(62, 56, ARGB);
 PImage H9 = new PImage(62, 56, ARGB);//standing
 PImage H10 = new PImage(62, 56, ARGB);//standing
+PImage CLOUD1;
 
 void draw() {
 
@@ -41,12 +43,9 @@ void draw() {
   }
   if (page==2) {
     map2();
-    if (goRight==1) {
-      // harryRIGHT();
-    }
-    if (goLeft==1) {
-      //harryLEFT();
-    }
+    harryAnimation();
+    harryDraw();
+    
   }
 
   //image(H9, gx-3 - cameraX, gy-29, 62, 56);

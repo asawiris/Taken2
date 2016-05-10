@@ -1,16 +1,17 @@
 //level1
-CLOUD c0 = new CLOUD(0, 350, 400);
-CLOUD c1 = new CLOUD(50, 300, 100);
-CLOUD c2 = new CLOUD(200, 250, 70);
-CLOUD c3 = new CLOUD(500, 350, 1000);
+CLOUD c0 = new CLOUD(0, 350, 400,2);
+CLOUD c1 = new CLOUD(50, 300, 100,1);
+CLOUD c2 = new CLOUD(200, 250, 70,1);
+CLOUD c3 = new CLOUD(500, 350, 1000,2);
 
 PORTAL p1 = new PORTAL(330, 350, 2);
 
 
 
 void map1() {
-  background(#3E0BDB);
+  background(#2AC0F5);
   scenery();
+  
 
 
   if (pause==0) {
@@ -28,8 +29,8 @@ void map1() {
   
 
   bordersAndCamera();
-  fill(#74EADC);
-  rect(0-cameraX,350, 400,100);
+  //fill(#74EADC);
+  //rect(0-cameraX,350, 400,100);
 
 
   jump = 1;
