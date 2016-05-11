@@ -12,10 +12,10 @@ void bordersAndCamera() {
     gx = mapWidth - 5;
   }
   //horizontal camera
-  if (gx > cameraX + 250 && cameraX < (mapWidth - width)) {
-    cameraX = gx - 250;
+  if (gx > cameraX + 300 && cameraX < (mapWidth - width)) {
+    cameraX = gx - 300;
   }
-  if (gx < cameraX + 150 && cameraX > 0) {
-    cameraX = gx - 150;
+  if (gx < cameraX + 300 && cameraX > 0) {
+    cameraX = gx - 300;
   }
 }

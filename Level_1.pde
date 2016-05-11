@@ -38,6 +38,5 @@ void map1() {
   alpha2-=10;
   if(alpha2<0){
     alpha=0;
-  }
-  
+  } 
 }
