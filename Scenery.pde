@@ -6,10 +6,10 @@ void scenery() {
     tree(300-.5*cameraX, 270);
     //building(300-.5*cameraX, 261, #00aa00, 2);
     cloud(100-.5*cameraX, C1Y);
-    cloud(200-.4*cameraX, 50);
-    cloud(400-.3*cameraX, 200 );
+    cloud(300-.4*cameraX, 50);
+    cloud(400-.3*cameraX, 100 );
     //building1(
-    C1Y=100+20*sin(ct);
+    C1Y=100+5*cos(ct);
     ct+=.1;
   }
   if (page==2) {//level2

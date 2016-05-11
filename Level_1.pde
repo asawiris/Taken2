@@ -11,6 +11,11 @@ int alpha2=255;
 void map1() {
   background(#2AC0F5);  
   scenery();
+  
+  
+ 
+  
+  
   if (pause==0) {
     movement();
   }

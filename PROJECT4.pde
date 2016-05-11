@@ -62,6 +62,9 @@ void draw() {
   if (page == 3) {
     chooseCharacter();
   }
+  if (page == 4){
+   //deli(); 
+  }
 
   //image(H9, gx-3 - cameraX, gy-29, 62, 56);
 }
@@ -98,11 +101,13 @@ void mousePressed() {
     fade=1;
   }
   if (mouseX>harryX && mouseX<harryX+82 && mouseY>harryY && mouseY<harryY+175) {
+    chosen=1;
     cSelect=0;
     harryRect=1;
     jadeRect=0;
   }
   if (mouseX>jadeX && mouseX<jadeX+ 94 && mouseY>jadeY && mouseY<jadeY+175) {
+    chosen=1;
     cSelect=1;
     jadeRect=1;
     harryRect=0;
