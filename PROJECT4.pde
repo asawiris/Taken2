@@ -36,22 +36,33 @@ PImage G9 = new PImage(62, 56, ARGB);//standing
 PImage G10 = new PImage(62, 56, ARGB);//standing
 PImage CLOUD1;
 
-void draw() {
 
+
+int cSelect = 0;//boy
+//1 for girl
+
+
+
+void draw() {
   noStroke();
   if (page==0) {
     titlePage();
-
   }
   if (page==1) {
     map1();
     characterAnimation();
-    harryDraw();
+    if (cSelect == 0)
+      harryDraw();
+    else
+      rebeccaDraw();
   }
   if (page==2) {
     map2();
     characterAnimation();
-    rebeccaDraw();
+    if (cSelect == 0)
+      harryDraw();
+    else
+      rebeccaDraw();
   }
 
   //image(H9, gx-3 - cameraX, gy-29, 62, 56);
