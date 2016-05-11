@@ -1,13 +1,35 @@
-
-int cSelect = 1;//boy
-int startX = 250,startY = 50;
-
-void chooseCharacter(){
- background(#2AC0F5);
- rect(150,206,94,175);
- image(GIRL, 200, 300,200,200);
- rect(356,206,82,175);
- image(BOY, 400, 300,200,200);
- rect(startX,startY,40,40);
+int cSelect;//0 for boy....1 for girl
+int startX = 300, startY = 185;
+int harryX = 156, harryY = 156, jadeX = 355, jadeY = 156;
+int harryRect=0, jadeRect=0, alpha,fade=0;
+void chooseCharacter() {
+  background(#2AC0F5);
+  image(CHOOSE, 300, 200);
+  
+  
+  if(fade==1){
+   alpha+=10; 
+  }
+  if (jadeRect==1) {
+    fill(#FFF93B);
+    rect(jadeX-5, jadeY-5, 104, 185,12,12,12,12);
+  }
+  if (harryRect==1) {
+    fill(#FFF93B);
+    rect(harryX-5, harryY-5, 92, 185,12,12,12,12);
+  }
+  
+  if (alpha>=270) {
+      alpha=0;
+      page=1;
+    }
+  image(GIRL, 405, 250, 200, 200);
+  image(BOY, 200, 250, 200, 200);
+  fill(#000000,alpha);
+  rect(0,0,600,400);
+  //textSize(30);
+  //fill(#FFFFFF);
+  //text(page,50,50);
+  //text(alpha,50,100);
   
 }

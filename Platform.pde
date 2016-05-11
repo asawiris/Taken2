@@ -11,18 +11,18 @@ class CLOUD {
   void update() {
     if (gx+5 > x && gx-5 < x + w   && gy > y && gy<=y + gvy) {
       gy = y;
-      
-    
+
+
       jump = 0;
       gvy = 0;
     }
     fill(#989898);
-    if(q==1){
-    rect(x-cameraX, y, w, 5);
+    if (q==1) {
+      rect(x-cameraX, y, w, 5);
     }
-    if(q==2){
+    if (q==2) {
       //2 is for floors
-    rect(x-cameraX, y, w, 200);
+      rect(x-cameraX, y, w, 200);
     }
   }
 }

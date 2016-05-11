@@ -14,13 +14,12 @@ void titlePage() {
   goRight = 1;
   gy = 400;
   gx+=2.5;
-  if(gx > width + 200){
+  if (gx > width + 200) {
     gx = -100;
   }
   characterAnimation();
   harryDraw();
   gx +=80;
   rebeccaDraw();
-    gx -=80;
-  
+  gx -=80;
 }

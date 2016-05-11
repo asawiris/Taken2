@@ -1,13 +1,13 @@
 //level2
-CLOUD c4 = new CLOUD(0, 350, 400,2);
-CLOUD c5 = new CLOUD(50, 300, 100,1);
-CLOUD c6 = new CLOUD(200, 250, 70,1);
-CLOUD c7 = new CLOUD(500, 350, 1000,2);
+CLOUD c4 = new CLOUD(0, 350, 400, 2);
+CLOUD c5 = new CLOUD(50, 300, 100, 1);
+CLOUD c6 = new CLOUD(200, 250, 70, 1);
+CLOUD c7 = new CLOUD(500, 350, 1000, 2);
 
 
 void map2() {
   background(#9D74EA);
-scenery();
+  scenery();
 
 
 
@@ -22,7 +22,7 @@ scenery();
     }
   }
 
-  
+
 
   bordersAndCamera();
 
