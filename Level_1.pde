@@ -40,7 +40,7 @@ void map1() {
   c3.update();
   p1.update();
 
-  character();
+
   if (gy>450) {
     ouch();
   }

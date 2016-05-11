@@ -32,7 +32,7 @@ scenery();
   c5.update();
   c6.update();
   c7.update();
-  character();
+  //character();
   if (gy>450) {
     ouch();
   }

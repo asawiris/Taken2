@@ -20,7 +20,7 @@ class PORTAL {
       pause=0;
       page=nextMap;
       //  if (page==2) {
-      mapWidth=1000;
+      mapWidth=4000;
       cameraX=0;
       gx=30;
       // }
