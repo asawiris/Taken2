@@ -6,7 +6,7 @@ CLOUD c3 = new CLOUD(500, 350, 1000, 2);
 
 PORTAL p1 = new PORTAL(330, 350, 2);
 
-int alpha2=260;
+int alpha2=255;
 
 void map1() {
   background(#2AC0F5);  
