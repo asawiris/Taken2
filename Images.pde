@@ -1,13 +1,8 @@
 int mTickRIGHT = 0;
 int mFrameRIGHT = 1;
-
 int mTickLEFT = 1;
 int mFrameLEFT = 1;
-
 int mFrame = 1;
-
-
-
 
 void sprite() {
   PImage whole = loadImage("data/COMPLETERIGHT.png");
@@ -31,7 +26,7 @@ void sprite() {
   H8.copy(whole2, 192, 0, 64, 64, 0, 0, 64, 64);
   H10.copy(whole, 256, 0, 64, 64, 0, 0, 64, 64);
 
-  //REBECCA
+  //olivia
   G1.copy(whole3, 0, 0, 64, 64, 0, 0, 64, 64);
   G2.copy(whole3, 64, 0, 64, 64, 0, 0, 64, 64);
   G3.copy(whole3, 128, 0, 64, 64, 0, 0, 64, 64);
@@ -47,14 +42,8 @@ void sprite() {
   //standing
 }
 
-
-
-
 void characterAnimation() {
-
-
   if (goRight == 1 ) {
-
     if (mFrame < 0) {
       mFrame=1;
     }
@@ -67,8 +56,6 @@ void characterAnimation() {
       }
     }
   }
-
-
   if (goLeft == 1 ) {
 
     if (mFrame > 0) {
@@ -84,10 +71,7 @@ void characterAnimation() {
     }
   }
 }
-
-
 void harryDraw() {
-
   if (jump ==1 && goRight == 1) {
     mFrame = 4;
   }
@@ -105,8 +89,6 @@ void harryDraw() {
       mFrame = -1;
     }
   }
-
-
   if (mFrame == 1) {
     image(H1, gx - 3 - cameraX, gy-29, 62, 56);
   }
@@ -119,8 +101,6 @@ void harryDraw() {
   if (mFrame == 4) {
     image(H4, gx - 3 - cameraX, gy-29, 62, 56);
   }
-
-
   if (mFrame == -1) {
     image(H5, gx - 3 - cameraX, gy-29, 62, 56);
   }
@@ -134,29 +114,22 @@ void harryDraw() {
     image(H8, gx - 3 - cameraX, gy-29, 62, 56);
   }
 }
-
-
-void rebeccaDraw() {
+void oliviaDraw() {
 
   if (jump ==1 && goRight == 1) {
     mFrame = 4;
   }
-
   if (jump ==1 && goLeft == 1) {
     mFrame = -4;
   }
-
   if (goRight == 0 && goLeft == 0) {
     if (mFrame >= 2) {
       mFrame = 1;
     }
-
     if (mFrame <= -2) {
       mFrame = -1;
     }
   }
-
-
   if (mFrame == 1) {
     image(G1, gx - 3 - cameraX, gy-29, 62, 56);
   }
@@ -169,8 +142,6 @@ void rebeccaDraw() {
   if (mFrame == 4) {
     image(G4, gx - 3 - cameraX, gy-29, 62, 56);
   }
-
-
   if (mFrame == -1) {
     image(G5, gx - 3 - cameraX, gy-29, 62, 56);
   }

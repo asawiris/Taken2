@@ -1,6 +1,5 @@
 //guymotion
-
-float gx, gy=350, gvy;
+float gx, gy=100, gvy;
 int goRight, goLeft, jump;
 
 void movement() {

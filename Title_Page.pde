@@ -20,6 +20,6 @@ void titlePage() {
   characterAnimation();
   harryDraw();
   gx +=80;
-  rebeccaDraw();
+  oliviaDraw();
   gx -=80;
 }

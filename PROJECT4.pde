@@ -1,7 +1,4 @@
 //github
-
-
-
 int page=0;
 int pause = 0;
 void setup() {
@@ -52,7 +49,7 @@ void draw() {
     if (cSelect == 0)
       harryDraw();
     else
-      rebeccaDraw();
+      oliviaDraw();
   }
   if (page==2) {
     map2();
@@ -60,7 +57,7 @@ void draw() {
     if (cSelect == 0)
       harryDraw();
     else
-      rebeccaDraw();
+      oliviaDraw();
   }
   if (page == 3) {
     chooseCharacter();
@@ -99,8 +96,6 @@ void mousePressed() {
   }
   if (page == 3 && dist(mouseX, mouseY, startX, startY)<20) {
     fade=1;
-
-    
   }
   if (mouseX>harryX && mouseX<harryX+82 && mouseY>harryY && mouseY<harryY+175) {
     cSelect=0;

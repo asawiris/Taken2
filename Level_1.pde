@@ -1,7 +1,7 @@
 //level1
 CLOUD c0 = new CLOUD(0, 350, 400, 2);
-CLOUD c1 = new CLOUD(50, 300, 100, 1);
-CLOUD c2 = new CLOUD(200, 250, 70, 1);
+//CLOUD c1 = new CLOUD(50, 300, 100, 1);
+//CLOUD c2 = new CLOUD(200, 250, 70, 1);
 CLOUD c3 = new CLOUD(500, 350, 1000, 2);
 
 PORTAL p1 = new PORTAL(330, 350, 2);
