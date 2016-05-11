@@ -12,6 +12,8 @@ void setup() {
   sprite();
   TITLE = loadImage("data/TITLE.png");
   CLOUD1 = loadImage("data/cloud.png");
+  GIRL = loadImage("data/GIRL.png");
+  BOY = loadImage("data/BOY.png");
 }
 PImage TITLE;
 PImage H1 = new PImage(62, 56, ARGB);//standing
@@ -35,10 +37,11 @@ PImage G8 = new PImage(62, 56, ARGB);
 PImage G9 = new PImage(62, 56, ARGB);//standing
 PImage G10 = new PImage(62, 56, ARGB);//standing
 PImage CLOUD1;
+PImage GIRL,BOY;
 
 
 
-int cSelect = 0;//boy
+
 //1 for girl
 
 
@@ -64,19 +67,24 @@ void draw() {
     else
       rebeccaDraw();
   }
+  if (page == 3){
+  chooseCharacter();
+}
 
   //image(H9, gx-3 - cameraX, gy-29, 62, 56);
 }
 void keyPressed() {
-  if (jump == 0 && keyCode == UP || jump == 0 && key == ' ') {
-    jump = 1;
-    gvy = -14;
-  }
-  if (keyCode == RIGHT) {
-    goRight = 1;
-  }
-  if (keyCode == LEFT) {
-    goLeft= 1;
+  if (page > 0) {
+    if (jump == 0 && keyCode == UP || jump == 0 && key == ' ') {
+      jump = 1;
+      gvy = -14;
+    }
+    if (keyCode == RIGHT) {
+      goRight = 1;
+    }
+    if (keyCode == LEFT) {
+      goLeft= 1;
+    }
   }
 }
 void keyReleased() {
@@ -89,7 +97,10 @@ void keyReleased() {
 }
 
 void mousePressed() {
-  if (dist(mouseX, mouseY, startX, startY)<25) {
-    page=1;
+  if (page == 0 && dist(mouseX, mouseY, chooseX, chooseY)<25) {
+    page=3;
+    goRight = 0;
+    gx = 0;
+    gy = 0;
   }
 }

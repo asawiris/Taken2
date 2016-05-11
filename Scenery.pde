@@ -4,8 +4,13 @@ void scenery() {
   tree(300-.5*cameraX, 261, #00aa00, 2);
   //building(300-.5*cameraX, 261, #00aa00, 2);
   cloud(100-.5*cameraX, 100);
-  cloud(100-.5*cameraX, 100);
-  cloud(100-.5*cameraX, 100);
+  cloud(200-.4*cameraX, 50);
+  cloud(400-.3*cameraX, 200);
+  //building1(
+  
+  
+  
+  
   }
   if(page==2){//level2
     tree(300-.5*cameraX, 261, #00aa00, 2);
