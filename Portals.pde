@@ -10,8 +10,8 @@ class PORTAL {
   }
 
   void update() {
-    if (dist(gx, gy, x, y)<10) {
-      gx=x;
+    if (dist(gx, gy, x+30, y)<10) {
+      gx=x+30;
       pause=1;
     }
 
@@ -32,7 +32,7 @@ class PORTAL {
 
     for ( int i = 0; i<20; i++) {
       fill(#FFFF00, 230 - 20*i);
-      rect(x-25 - cameraX, y - 10 - 10*i, 50, 10, 2);
+      rect(x-25 - .5*cameraX, y - 10 - 10*i, 50, 10, 2);
     }
   }
 }

@@ -8,7 +8,7 @@ void setup() {
   noStroke();
   imageMode(CENTER);
   sprite();
-  sound();
+  //sound();
   TITLE = loadImage("data/TITLE.png");
   CLOUD = loadImage("data/cloud.png");
   GIRL = loadImage("data/GIRL.png");
@@ -18,7 +18,7 @@ void setup() {
   RED = loadImage("data/RED.png");
   GREY = loadImage("data/GREY.png");
   DELI = loadImage("data/DELI.png");
-  player = minim.loadFile("data/TitleSong.mp3", 2048);
+  //player = minim.loadFile("data/TitleSong.mp3", 2048);
 }
 
 
@@ -48,20 +48,24 @@ PImage GIRL, BOY, CLOUD, TREE, CHOOSE, TITLE, RED, DELI, STOP, GREY;
 void draw() {
   noStroke();
   if (music==1) {
-    player.play();
+    //player.play();
   }
   if (page==0) {
     titlePage();
      //music=1;
   }
   if (page==1) {
-
+    
     map1();
+    
     characterAnimation();
+    
     if (cSelect == 0)
       harryDraw();
     else
       oliviaDraw();
+      
+     
   }
   if (page==2) {
     map2();
@@ -81,9 +85,9 @@ void draw() {
 
 void stop() {
   if (page==2 || page == 1) {
-    player.close();
-    minim.stop();
-    super.stop();
+   // player.close();
+   // minim.stop();
+    //super.stop();
   }
 }
 
@@ -113,8 +117,8 @@ void mousePressed() {
   if (page == 0 && dist(mouseX, mouseY, chooseX, chooseY)<25) {
     page=3;
     goRight = 0;
-    gx = 0;
-    gy = 0;
+    gx = 20;
+    gy = 350;
   }
   if (page == 3 && dist(mouseX, mouseY, startX, startY)<20) {
     fade=1;
