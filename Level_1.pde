@@ -1,8 +1,7 @@
 //level1
-CLOUD c0 = new CLOUD(0, 350, 400, 2);
-//CLOUD c1 = new CLOUD(50, 300, 100, 1);
-//CLOUD c2 = new CLOUD(200, 250, 70, 1);
-CLOUD c3 = new CLOUD(500, 350, 1000, 2);
+
+
+CLOUD c1 = new CLOUD(000, 350, 4000, 2);
 
 PORTAL p1 = new PORTAL(330, 350, 2);
 
@@ -11,7 +10,23 @@ int alpha2=255;
 void map1() {
   background(#2AC0F5);  
   scenery();
-  
+    tree(300-.5*cameraX, 270);
+    cloud(100-.6*cameraX, C1Y);
+    cloud(350-.6*cameraX, 50);
+    cloud(600-.6*cameraX, 100 );
+    cloud(850-.6*cameraX, 75);
+    cloud(1100-.6*cameraX, 50 );
+    cloud(1350-.6*cameraX, 100);
+    cloud(1600-.6*cameraX, 75 );
+    cloud(1850-.6*cameraX, 50);
+    cloud(2100-.6*cameraX, 100 );
+    cloud(2350-.6*cameraX, 75);
+    cloud(2600-.6*cameraX, 50 );
+    
+    
+    buildingRED(600-.5*cameraX,225);
+    buildingGREY(785-.5*cameraX,100);
+    deli(965-.5*cameraX,100);
   
  
   
@@ -28,10 +43,8 @@ void map1() {
   bordersAndCamera();
   
   jump = 1;
-  c0.update();
-  //c1.update();
-  //c2.update();
-  c3.update();
+  c1.update();
+  
   p1.update();
 
   if (gy>450) {

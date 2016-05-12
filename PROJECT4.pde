@@ -1,19 +1,27 @@
 //github
 int page=0;
 int pause = 0;
+int music=0;
 void setup() {
   size(600, 400);
   frameRate(30);
   noStroke();
   imageMode(CENTER);
   sprite();
+  sound();
   TITLE = loadImage("data/TITLE.png");
   CLOUD = loadImage("data/cloud.png");
   GIRL = loadImage("data/GIRL.png");
   BOY = loadImage("data/BOY.png");
   TREE = loadImage("data/TREE.png");
   CHOOSE = loadImage("data/CHOOSE.png");
+  RED = loadImage("data/RED.png");
+  GREY = loadImage("data/GREY.png");
+  DELI = loadImage("data/DELI.png");
+  player = minim.loadFile("data/TitleSong.mp3", 2048);
 }
+
+
 
 PImage H1 = new PImage(62, 56, ARGB);//standing
 PImage H2 = new PImage(62, 56, ARGB);//moving 1
@@ -35,15 +43,19 @@ PImage G7 = new PImage(62, 56, ARGB);//moving 2\
 PImage G8 = new PImage(62, 56, ARGB);
 PImage G9 = new PImage(62, 56, ARGB);//standing
 PImage G10 = new PImage(62, 56, ARGB);//standing
-PImage GIRL, BOY, CLOUD, TREE, CHOOSE, TITLE;
+PImage GIRL, BOY, CLOUD, TREE, CHOOSE, TITLE, RED, DELI, STOP, GREY;
 
 void draw() {
   noStroke();
-
+  if (music==1) {
+    player.play();
+  }
   if (page==0) {
     titlePage();
+     //music=1;
   }
   if (page==1) {
+
     map1();
     characterAnimation();
     if (cSelect == 0)
@@ -62,12 +74,19 @@ void draw() {
   if (page == 3) {
     chooseCharacter();
   }
-  if (page == 4){
-   //deli(); 
+  if (page == 4) {
+    //cutscene();
   }
-
-  //image(H9, gx-3 - cameraX, gy-29, 62, 56);
 }
+
+void stop() {
+  if (page==2 || page == 1) {
+    player.close();
+    minim.stop();
+    super.stop();
+  }
+}
+
 void keyPressed() {
   if (page > 0) {
     if (jump == 0 && keyCode == UP || jump == 0 && key == ' ') {
@@ -100,13 +119,13 @@ void mousePressed() {
   if (page == 3 && dist(mouseX, mouseY, startX, startY)<20) {
     fade=1;
   }
-  if (mouseX>harryX && mouseX<harryX+82 && mouseY>harryY && mouseY<harryY+175) {
+  if (page == 3 && mouseX>harryX && mouseX<harryX+82 && mouseY>harryY && mouseY<harryY+175) {
     chosen=1;
     cSelect=0;
     harryRect=1;
     jadeRect=0;
   }
-  if (mouseX>jadeX && mouseX<jadeX+ 94 && mouseY>jadeY && mouseY<jadeY+175) {
+  if (page == 3 && mouseX>jadeX && mouseX<jadeX+ 94 && mouseY>jadeY && mouseY<jadeY+175) {
     chosen=1;
     cSelect=1;
     jadeRect=1;
