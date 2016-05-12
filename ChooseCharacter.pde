@@ -7,7 +7,6 @@ void chooseCharacter() {
   background(#2AC0F5);
   image(CHOOSE, 300, 200);
 
-
   if (chosen==0) {
     if (mouseX>harryX && mouseX<harryX+82 && mouseY>harryY && mouseY<harryY+175)     
       harryRect=1;

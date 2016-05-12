@@ -52,48 +52,36 @@ void draw() {
   }
   if (page==0) {
     titlePage();
-     //music=1;
+    //music=1;
   }
   if (page==1) {
-    
-    map1();
-    
+    map1(); 
     characterAnimation();
     
-    if (cSelect == 0)
-      harryDraw();
-    else
-      oliviaDraw();
-      
-     
   }
   if (page==2) {
     map2();
     characterAnimation();
-    if (cSelect == 0)
-      harryDraw();
-    else
-      oliviaDraw();
   }
   if (page == 3) {
     chooseCharacter();
   }
   if (page == 4) {
-    //cutscene();
+    //deli();
   }
 }
 
 void stop() {
   if (page==2 || page == 1) {
-   // player.close();
-   // minim.stop();
+    // player.close();
+    // minim.stop();
     //super.stop();
   }
 }
 
 void keyPressed() {
   if (page > 0) {
-    if (jump == 0 && keyCode == UP || jump == 0 && key == ' ') {
+    if (jump == 0 && keyCode == UP ) {
       jump = 1;
       gvy = -14;
     }

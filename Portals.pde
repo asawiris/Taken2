@@ -10,8 +10,8 @@ class PORTAL {
   }
 
   void update() {
-    if (dist(gx, gy, x+30, y)<10) {
-      gx=x+30;
+    if (dist(gx - 1 - .5*cameraX, gy, x, y)<5) {
+      gx=x + 1 + .5*cameraX;
       pause=1;
     }
 
@@ -19,20 +19,20 @@ class PORTAL {
     if (pause==3) {
       pause=0;
       page=nextMap;
-      //  if (page==2) {
       mapWidth=4000;
       cameraX=0;
       gx=30;
-      // }
+      alpha2-=30;
     }
 
 
     //fill(128);
     //ellipse(x-cameraX, y, 50, 20);
 
-    for ( int i = 0; i<20; i++) {
-      fill(#FFFF00, 230 - 20*i);
-      rect(x-25 - .5*cameraX, y - 10 - 10*i, 50, 10, 2);
+    for ( int i = 0; i < 8; i++) {
+       fill(#FFFF00, 255 - (255*i/8));
+       
+      rect(x-25 - .5*cameraX, y - 8 - 8*i, 50, 8, 2);
     }
   }
 }

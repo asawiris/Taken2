@@ -8,8 +8,14 @@ CLOUD c7 = new CLOUD(500, 350, 1000, 2);
 void map2() {
   background(#9D74EA);
   scenery();
+  
+    
 
-
+    if (cSelect == 0)
+      harryDraw();
+    else
+      oliviaDraw();
+  
 
 
   if (pause==0) {

@@ -1,4 +1,4 @@
-void cutscene(){
+void delie(){
  
   
   
