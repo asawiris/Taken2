@@ -22,7 +22,11 @@ class CLOUD {
     }
     if (q==2) {
       //2 is for floors
+      
+      fill(#989898);
       rect(x-cameraX, y, w, 200);
+      fill(#000000);
+      rect(x-cameraX, y, w,2);
     }
   }
 }

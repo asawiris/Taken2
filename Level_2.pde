@@ -9,6 +9,7 @@ void map2() {
   background(#9D74EA);
   scenery();
   
+  
     
 
     if (cSelect == 0)
@@ -20,6 +21,7 @@ void map2() {
 
   if (pause==0) {
     movement();
+    
   }
   if (pause==1) {
     gy-=5;

@@ -1,7 +1,6 @@
 //camera
 int mapWidth = 4000;
 float cameraX = 0;
-
 void bordersAndCamera() {
   //left
   if (gx < 5) {

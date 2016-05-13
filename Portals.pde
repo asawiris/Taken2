@@ -13,25 +13,31 @@ class PORTAL {
     if (dist(gx - 1 - .5*cameraX, gy, x, y)<5) {
       gx=x + 1 + .5*cameraX;
       pause=1;
+      if (fadeC == 0) {
+        fadeC = 1;
+        nextLevel = nextMap;
+      }
     }
 
 
+
+    /*
     if (pause==3) {
-      pause=0;
-      page=nextMap;
-      mapWidth=4000;
-      cameraX=0;
-      gx=30;
-      alpha2-=30;
-    }
+     pause=0;
+     page=nextMap;
+     mapWidth=4000;
+     cameraX=0;
+     gx=30;
+     //  alpha2-=30;
+     }*/
 
 
     //fill(128);
     //ellipse(x-cameraX, y, 50, 20);
 
     for ( int i = 0; i < 8; i++) {
-       fill(#FFFF00, 255 - (255*i/8));
-       
+      fill(#FFFF00, 255 - (255*i/8));
+
       rect(x-25 - .5*cameraX, y - 8 - 8*i, 50, 8, 2);
     }
   }

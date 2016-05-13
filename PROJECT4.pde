@@ -2,6 +2,9 @@
 int page=0;
 int pause = 0;
 int music=0;
+int nextLevel;
+
+int level = 1;
 void setup() {
   size(600, 400);
   frameRate(30);
@@ -45,6 +48,72 @@ PImage G9 = new PImage(62, 56, ARGB);//standing
 PImage G10 = new PImage(62, 56, ARGB);//standing
 PImage GIRL, BOY, CLOUD, TREE, CHOOSE, TITLE, RED, DELI, STOP, GREY;
 
+
+
+
+
+int fadeC = 3;
+int alphaC = 255;
+//1 start to fade to black
+//3 means you fade from black
+//0 means no fading occurs
+
+
+
+
+
+
+
+
+void fader() {
+
+  if (fadeC == 1) {
+    fadeC = 2;
+  }
+
+  if (fadeC == 2) {
+    alphaC+=10;
+
+    if (alphaC >=255) {//fully black
+      alphaC = 255;
+      fadeC = 3;
+
+
+      if (page == 0) {
+        page=3;
+        goRight = 0;
+        gx = 20;
+        gy = 350;
+      } else if (page == 3) {
+        page = 1;
+      } else if (page == 1) {
+        pause = 0;
+        level = nextLevel; 
+        if (level==2) {
+          gx=40;
+          gy=350;
+        }
+      }
+    }
+  }
+
+
+  if (fadeC == 3) {
+    alphaC -= 20;
+
+    if (alphaC <=0) {
+      alphaC = 0;
+      fadeC = 0;
+    }
+  }
+
+
+
+  fill(#000000, alphaC);
+  rect(-5, -5, width+10, height+10);
+}
+
+
 void draw() {
   noStroke();
   if (music==1) {
@@ -55,19 +124,33 @@ void draw() {
     //music=1;
   }
   if (page==1) {
-    map1(); 
+
+    if (level == 1) {
+      map1();
+    }
+
+
+    if (level == 2) {
+      map2();
+    }
+
     characterAnimation();
-    
   }
-  if (page==2) {
-    map2();
-    characterAnimation();
-  }
+
+
+
+
+
   if (page == 3) {
     chooseCharacter();
   }
   if (page == 4) {
-    //deli();
+    deli();
+  }
+
+
+  if (fadeC > 0) {
+    fader();
   }
 }
 
@@ -103,24 +186,29 @@ void keyReleased() {
 }
 void mousePressed() {
   if (page == 0 && dist(mouseX, mouseY, chooseX, chooseY)<25) {
-    page=3;
-    goRight = 0;
-    gx = 20;
-    gy = 350;
+    if (fadeC == 0) {
+      fadeC = 1;
+    }
   }
-  if (page == 3 && dist(mouseX, mouseY, startX, startY)<20) {
-    fade=1;
-  }
-  if (page == 3 && mouseX>harryX && mouseX<harryX+82 && mouseY>harryY && mouseY<harryY+175) {
-    chosen=1;
-    cSelect=0;
-    harryRect=1;
-    jadeRect=0;
-  }
-  if (page == 3 && mouseX>jadeX && mouseX<jadeX+ 94 && mouseY>jadeY && mouseY<jadeY+175) {
-    chosen=1;
-    cSelect=1;
-    jadeRect=1;
-    harryRect=0;
+  if (page == 3) {
+    if ( dist(mouseX, mouseY, startX, startY)<20) {
+      if (fadeC == 0) {
+        fadeC = 1;
+      }
+    }
+
+
+    if ( mouseX>harryX && mouseX<harryX+82 && mouseY>harryY && mouseY<harryY+175) {
+      chosen=1;
+      cSelect=0;
+      harryRect=1;
+      jadeRect=0;
+    }
+    if (mouseX>jadeX && mouseX<jadeX+ 94 && mouseY>jadeY && mouseY<jadeY+175) {
+      chosen=1;
+      cSelect=1;
+      jadeRect=1;
+      harryRect=0;
+    }
   }
 }

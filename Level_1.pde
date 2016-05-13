@@ -1,10 +1,10 @@
 //level1
 
-int alpha2=255;
-int alpha3=0;
+//int alpha2=255;
+//int alpha3=0;
 CLOUD c1 = new CLOUD(000, 350, 4000, 2);
 
-PORTAL p1 = new PORTAL(963, 350, 2);
+PORTAL p1 = new PORTAL(163, 350, 2);
 
 
 
@@ -32,23 +32,18 @@ void map1() {
     harryDraw();
   else
     oliviaDraw();
-/*
+  /*
   if (pause==1) {
-    alpha3+=10;
-  }
-  if (alpha3>=200) {
-    alpha3=199;
-    pause=3;
-  }
-*/
-  
-  if (pause==1) {
-   gy-=5;
-   if (gy<0) {
+   alpha3+=10;
+   }
+   if (alpha3>=255) {
+   alpha3=255;
    pause=3;
    }
-   }
-   
+   */
+
+
+
   if (pause==0) {
     movement();
   }
@@ -58,22 +53,5 @@ void map1() {
   p1.update();
   if (gy>450) {
     ouch();
-  }
-  fill(#000000, alpha2);
-  rect(0, 0, 600, 400);
-  fill(#000000, alpha3);
-  rect(0, 0, 600, 400);
-
-  fill(#ffffff);
-  textSize(30);
-  text(alpha3, 50, 50);
-  text(page, 50, 100);
-  text(pause, 50, 150);
-
-  if (gx<300) {
-    alpha2-=10;
-  }
-  if (alpha2<0) {
-    alpha2=0;
   }
 }
