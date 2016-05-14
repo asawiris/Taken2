@@ -21,6 +21,8 @@ void setup() {
   RED = loadImage("data/RED.png");
   GREY = loadImage("data/GREY.png");
   DELI = loadImage("data/DELI.png");
+  ORANGE = loadImage("data/ORANGE.png");
+  GREEN = loadImage("data/GREEN.png");
   //player = minim.loadFile("data/TitleSong.mp3", 2048);
 }
 
@@ -46,7 +48,7 @@ PImage G7 = new PImage(62, 56, ARGB);//moving 2\
 PImage G8 = new PImage(62, 56, ARGB);
 PImage G9 = new PImage(62, 56, ARGB);//standing
 PImage G10 = new PImage(62, 56, ARGB);//standing
-PImage GIRL, BOY, CLOUD, TREE, CHOOSE, TITLE, RED, DELI, STOP, GREY;
+PImage GIRL, BOY, CLOUD, TREE, CHOOSE, TITLE, RED, DELI, STOP, GREY, ORANGE, GREEN;
 
 
 
@@ -133,6 +135,12 @@ void draw() {
     if (level == 2) {
       map2();
     }
+    
+    if (level == 3){
+      deli();
+    }
+    
+    
 
     characterAnimation();
   }

@@ -4,7 +4,7 @@
 //int alpha3=0;
 CLOUD c1 = new CLOUD(000, 350, 4000, 2);
 
-PORTAL p1 = new PORTAL(163, 350, 2);
+PORTAL p1 = new PORTAL(963, 350, 3);
 
 
 
@@ -25,6 +25,8 @@ void map1() {
   cloud(2600-.6*cameraX, 50 );
   buildingRED(600-.5*cameraX, 225);
   buildingGREY(785-.5*cameraX, 100);
+  //buildingGREEN(930-.5*cameraX,200);
+  //buildingORANGE(1230-.5*cameraX,100);
   deli(965-.5*cameraX, 100);
 
 
