@@ -2,7 +2,7 @@
 
 //int alpha2=255;
 //int alpha3=0;
-CLOUD c1 = new CLOUD(000, 350, 4000, 2);
+CLOUD c1 = new CLOUD(-100, 350, 4100, 2);
 
 PORTAL p1 = new PORTAL(963, 350, 3);
 
@@ -23,8 +23,8 @@ void map1() {
   cloud(2100-.6*cameraX, 100 );
   cloud(2350-.6*cameraX, 75);
   cloud(2600-.6*cameraX, 50 );
-  buildingRED(600-.5*cameraX, 225);
-  buildingGREY(785-.5*cameraX, 100);
+  //buildingRED(600-.5*cameraX, 225);
+  //buildingGREY(785-.5*cameraX, 100);
   //buildingGREEN(930-.5*cameraX,200);
   //buildingORANGE(1230-.5*cameraX,100);
   deli(965-.5*cameraX, 100);
@@ -34,15 +34,6 @@ void map1() {
     harryDraw();
   else
     oliviaDraw();
-  /*
-  if (pause==1) {
-   alpha3+=10;
-   }
-   if (alpha3>=255) {
-   alpha3=255;
-   pause=3;
-   }
-   */
 
 
 

@@ -17,4 +17,8 @@ void bordersAndCamera() {
   if (gx < cameraX + 300 && cameraX > 0) {
     cameraX = gx - 300;
   }
+  if(level==3)
+  mapWidth=600; 
+  else
+  mapWidth=4000;
 }

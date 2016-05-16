@@ -95,6 +95,10 @@ void fader() {
           gx=40;
           gy=350;
         }
+        if(level == 3){
+         gx=40;
+         gy=350;
+        }
       }
     }
   }
@@ -141,6 +145,8 @@ void draw() {
     }
     
     
+    
+    
 
     characterAnimation();
   }
@@ -152,9 +158,7 @@ void draw() {
   if (page == 3) {
     chooseCharacter();
   }
-  if (page == 4) {
-    deli();
-  }
+ 
 
 
   if (fadeC > 0) {
