@@ -3,15 +3,14 @@ int page=0;
 int pause = 0;
 int music=0;
 int nextLevel;
+int level = 4;
 
-int level = 1;
 void setup() {
   size(600, 400);
   frameRate(30);
   noStroke();
   imageMode(CENTER);
   sprite();
-  //sound();
   TITLE = loadImage("data/TITLE.png");
   CLOUD = loadImage("data/cloud.png");
   GIRL = loadImage("data/GIRL.png");
@@ -23,7 +22,12 @@ void setup() {
   DELI = loadImage("data/DELI.png");
   ORANGE = loadImage("data/ORANGE.png");
   GREEN = loadImage("data/GREEN.png");
-  //player = minim.loadFile("data/TitleSong.mp3", 2048);
+  TABLE = loadImage("data/TABLE.png");
+  OSITTING = loadImage("data/OSITTING.png");
+  HSITTING = loadImage("data/HSITTING.png");
+  font = loadFont("data/PressStart2P-32.vlw");
+  SBUB = loadImage("data/SBUB.png");
+  SBUB2 = loadImage("data/SBUB2.png");
 }
 
 
@@ -48,8 +52,8 @@ PImage G7 = new PImage(62, 56, ARGB);//moving 2\
 PImage G8 = new PImage(62, 56, ARGB);
 PImage G9 = new PImage(62, 56, ARGB);//standing
 PImage G10 = new PImage(62, 56, ARGB);//standing
-PImage GIRL, BOY, CLOUD, TREE, CHOOSE, TITLE, RED, DELI, STOP, GREY, ORANGE, GREEN;
-
+PImage GIRL, BOY, CLOUD, TREE, CHOOSE, TITLE, RED, DELI, STOP, GREY, ORANGE, GREEN, TABLE, OSITTING, HSITTING, SBUB, SBUB2;
+PFont font;
 
 
 
@@ -95,9 +99,8 @@ void fader() {
           gx=40;
           gy=350;
         }
-        if(level == 3){
-         gx=40;
-         gy=350;
+        if (level == 3) {
+          gx=100;
         }
       }
     }
@@ -120,15 +123,33 @@ void fader() {
 }
 
 
+
+
+
+
+
+
+
+
+
 void draw() {
   noStroke();
-  if (music==1) {
-    //player.play();
-  }
+  
+  
   if (page==0) {
+    
+    
+    
+    
+    
+    
+    
+    
     titlePage();
     //music=1;
   }
+  
+  
   if (page==1) {
 
     if (level == 1) {
@@ -139,39 +160,24 @@ void draw() {
     if (level == 2) {
       map2();
     }
-    
-    if (level == 3){
+
+    if (level == 3) {
       deli();
     }
-    
-    
-    
-    
+    if (level==4) {
+      story();
+    }
 
     characterAnimation();
   }
-
-
-
-
-
   if (page == 3) {
     chooseCharacter();
   }
- 
-
-
   if (fadeC > 0) {
     fader();
   }
-}
-
-void stop() {
-  if (page==2 || page == 1) {
-    // player.close();
-    // minim.stop();
-    //super.stop();
-  }
+  
+  
 }
 
 void keyPressed() {
@@ -208,8 +214,6 @@ void mousePressed() {
         fadeC = 1;
       }
     }
-
-
     if ( mouseX>harryX && mouseX<harryX+82 && mouseY>harryY && mouseY<harryY+175) {
       chosen=1;
       cSelect=0;

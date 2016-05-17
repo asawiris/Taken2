@@ -8,20 +8,14 @@ CLOUD c7 = new CLOUD(500, 350, 1000, 2);
 void map2() {
   background(#9D74EA);
   scenery();
-  
-  
-    
 
-    if (cSelect == 0)
-      harryDraw();
-    else
-      oliviaDraw();
-  
-
+  if (cSelect == 0)
+    harryDraw();
+  else
+    oliviaDraw();
 
   if (pause==0) {
     movement();
-    
   }
   if (pause==1) {
     gy-=5;
@@ -30,17 +24,13 @@ void map2() {
     }
   }
 
-
-
   bordersAndCamera();
-
 
   jump = 1;//1 line of code. falling jump fix
   c4.update();
   c5.update();
   c6.update();
   c7.update();
-  //character();
   if (gy>450) {
     ouch();
   }

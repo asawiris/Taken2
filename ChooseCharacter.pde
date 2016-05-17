@@ -10,7 +10,7 @@ void chooseCharacter() {
   if (chosen==0) {
     if (mouseX>harryX && mouseX<harryX+82 && mouseY>harryY && mouseY<harryY+175)     
       harryRect=1;
-      else
+    else
       harryRect=0;  
     if (mouseX>jadeX && mouseX<jadeX+ 94 && mouseY>jadeY && mouseY<jadeY+175) 
       jadeRect=1;

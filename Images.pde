@@ -72,7 +72,7 @@ void characterAnimation() {
   }
 }
 void harryDraw() {
-  
+
   if (jump ==1 && goRight == 1) {
     mFrame = 4;
   }
@@ -90,7 +90,7 @@ void harryDraw() {
       mFrame = -1;
     }
   }
-  
+
   if (mFrame == 1) {
     image(H1, gx - 3 - cameraX, gy-29, 62, 56);
   }

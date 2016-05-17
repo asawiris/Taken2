@@ -22,9 +22,9 @@ void buildingGREY(float x, float y) {
 void deli(float x, float y) {
   image(DELI, x, y, 500, 500);
 }
-void buildingORANGE(float x, float y){
- image( ORANGE, x, y,500,500);
+void buildingORANGE(float x, float y) {
+  image( ORANGE, x, y, 500, 500);
 }
-void buildingGREEN(float x, float y){
- image(GREEN, x, y, 500,500); 
+void buildingGREEN(float x, float y) {
+  image(GREEN, x, y, 500, 500);
 }
