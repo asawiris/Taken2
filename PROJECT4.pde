@@ -3,7 +3,7 @@ int page=0;
 int pause = 0;
 int music=0;
 int nextLevel;
-int level = 4;
+int level = 1;
 
 void setup() {
   size(600, 400);
@@ -28,6 +28,9 @@ void setup() {
   font = loadFont("data/PressStart2P-32.vlw");
   SBUB = loadImage("data/SBUB.png");
   SBUB2 = loadImage("data/SBUB2.png");
+  CHAIR = loadImage("data/CHAIR.png");
+  HLEFT = loadImage("data/HLEFT.png");
+  OLEFT = loadImage("data/OLEFT.png");
 }
 
 
@@ -52,7 +55,7 @@ PImage G7 = new PImage(62, 56, ARGB);//moving 2\
 PImage G8 = new PImage(62, 56, ARGB);
 PImage G9 = new PImage(62, 56, ARGB);//standing
 PImage G10 = new PImage(62, 56, ARGB);//standing
-PImage GIRL, BOY, CLOUD, TREE, CHOOSE, TITLE, RED, DELI, STOP, GREY, ORANGE, GREEN, TABLE, OSITTING, HSITTING, SBUB, SBUB2;
+PImage GIRL, BOY, CLOUD, TREE, CHOOSE, TITLE, RED, DELI, STOP, GREY, ORANGE, GREEN, TABLE, OSITTING, HSITTING, SBUB, SBUB2, CHAIR, HLEFT, OLEFT;
 PFont font;
 
 

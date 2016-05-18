@@ -1,10 +1,12 @@
-int storyX=220, storyY=350;
+int storyX=220, storyY=350, endStory=1;
 
 String phrase1 = "Hey how are\nyou!How's\nyour day\nbeen?";
-String phrase2 = "Pretty good"; 
-String phrase3 = "sdfsafdsfPretty good"; 
-String phrase4 = "Presdfdsagfdtty good"; 
-String phrase5 = "204ot02ogo0fgd0ofg0g\ny good"; 
+String phrase2 = "Pretty good.    \nHow was\nJoey?"; 
+String phrase3 = "What do you\nmean???"; 
+String phrase4 = "You dropped\nhim off at\ndaycare...   \nRight?"; 
+String phrase5 = "No! I\nthought\nyou dropped\nhim off!"; 
+String phrase6 = "We've got\nto find\nhim!";
+String phrase7 = "";
 int talkVar = 1; // 1 // 2// 3
 
 String phrase0 = phrase1;
@@ -25,19 +27,13 @@ void story() {
   image(OSITTING, storyX, storyY, 150, 150);
   image(TABLE, storyX+74, storyY-10, 150, 150);
   image(HSITTING, storyX+150, storyY, 150, 150);
-
-
-
-
-
-
-
+ 
   if (talkVar == 1 || talkVar == 3 || talkVar == 5) {
     image(SBUB, 260, 260, 200, 200);
   }
 
   if (talkVar == 2 || talkVar == 4 || talkVar == 6) {
-    image(SBUB2, 280, 260, 200, 200);
+    image(SBUB2, 330, 260, 200, 200);
   }
 
   phraseVar+=1;
@@ -65,6 +61,14 @@ void story() {
       if (talkVar == 5) {
         phrase0 = phrase5;
       }
+      if(talkVar == 6){
+       phrase0=phrase6; 
+      }
+      if(talkVar == 7){
+        endStory=0;
+        //fadeC=1;
+        level=3;
+      }
     }
   }
 
@@ -79,6 +83,6 @@ void story() {
   }
 
   if (talkVar == 2 || talkVar == 4 || talkVar == 6) {
-    text(phrase0.substring(0, (int)phraseVar), 190, 190);
+    text(phrase0.substring(0, (int)phraseVar), 245, 190);
   }
 }
