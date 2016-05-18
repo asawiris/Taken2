@@ -5,13 +5,16 @@
 CLOUD c1 = new CLOUD(-100, 350, 4100, 2);
 
 PORTAL p1 = new PORTAL(462, 350, 3);
-
+int phoneX=450,phoneY=400;
+PHONE P = new PHONE(phoneX,phoneY);
 int fontAlpha=255;
 
 
 void map1() {
   background(#2AC0F5);  
+  
   scenery();
+  
   tree(300-.5*cameraX, 270);
   /*
   cloud(100-.6*cameraX, C1Y);
@@ -37,7 +40,7 @@ void map1() {
    }
    */
   deli(465-.5*cameraX, 100);
-
+  
 
   if (cSelect==0) {
     fill(#FFFFFF, fontAlpha);
@@ -55,15 +58,18 @@ void map1() {
   else
     oliviaDraw();
 
+  
 
-
-  if (pause==0) {
+    if (pause==0) {
     movement();
   }
   bordersAndCamera();
   jump = 1;
   c1.update();
   p1.update();
+  println(phoneY);
+  
+  P.update();
   if (gy>450) {
     ouch();
   }

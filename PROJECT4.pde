@@ -137,22 +137,22 @@ void fader() {
 
 void draw() {
   noStroke();
-  
-  
+
+
   if (page==0) {
-    
-    
-    
-    
-    
-    
-    
-    
+
+
+
+
+
+
+
+
     titlePage();
     //music=1;
   }
-  
-  
+
+
   if (page==1) {
 
     if (level == 1) {
@@ -179,8 +179,6 @@ void draw() {
   if (fadeC > 0) {
     fader();
   }
-  
-  
 }
 
 void keyPressed() {
