@@ -3,7 +3,7 @@ int page=0;
 int pause = 0;
 int music=0;
 int nextLevel;
-int level = 1;
+int level = 4;
 
 void setup() {
   size(600, 400);
@@ -17,11 +17,13 @@ void setup() {
   BOY = loadImage("data/BOY.png");
   TREE = loadImage("data/TREE.png");
   CHOOSE = loadImage("data/CHOOSE.png");
-  RED = loadImage("data/RED.png");
-  GREY = loadImage("data/GREY.png");
   DELI = loadImage("data/DELI.png");
-  ORANGE = loadImage("data/ORANGE.png");
-  GREEN = loadImage("data/GREEN.png");
+  /*
+  RED = loadImage("data/RED.png");
+   GREY = loadImage("data/GREY.png");
+   ORANGE = loadImage("data/ORANGE.png");
+   GREEN = loadImage("data/GREEN.png");
+   */
   TABLE = loadImage("data/TABLE.png");
   OSITTING = loadImage("data/OSITTING.png");
   HSITTING = loadImage("data/HSITTING.png");
@@ -98,6 +100,11 @@ void fader() {
       } else if (page == 1) {
         pause = 0;
         level = nextLevel; 
+        if (level == 1) {
+          if (NEW==1) {
+            gx=1700;
+          }
+        }
         if (level==2) {
           gx=40;
           gy=350;
@@ -119,20 +126,9 @@ void fader() {
     }
   }
 
-
-
   fill(#000000, alphaC);
   rect(-5, -5, width+10, height+10);
 }
-
-
-
-
-
-
-
-
-
 
 
 void draw() {
@@ -140,13 +136,6 @@ void draw() {
 
 
   if (page==0) {
-
-
-
-
-
-
-
 
     titlePage();
     //music=1;

@@ -1,7 +1,10 @@
 CLOUD C10 = new CLOUD(-300, 350, 4000, 2);
+
 PORTAL p2 = new PORTAL(50, 350, 1);
 
 PORTAL p3= new PORTAL(400, 350, 4);
+
+PHONE PH2 = new PHONE(phoneX, phoneY);
 
 void deli() {
 
@@ -14,7 +17,7 @@ void deli() {
   fill(#7A4407);
   rect(-80 -.5*cameraX, 280, 20, 40);
 
-if (endStory==1) {
+  if (endStory==1) {
     p3.update();
   }
 
@@ -41,6 +44,7 @@ if (endStory==1) {
 
   C10.update();
   p2.update();
-  
+  PH2.update();
+
   bordersAndCamera();
 }
