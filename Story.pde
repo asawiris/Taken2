@@ -64,11 +64,12 @@ void story() {
       if (talkVar == 6) {
         phrase0=phrase6;
       }
-      if (talkVar == 7) {
+      if (talkVar == 7 && fadeC==0) {
+        nextLevel = 1;
         endStory=0;
-        //fadeC=1;
-        level=3;
+        //level=3;
         NEW=1;
+        fadeC=1;
       }
     }
   }

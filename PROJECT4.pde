@@ -3,7 +3,7 @@ int page=0;
 int pause = 0;
 int music=0;
 int nextLevel;
-int level = 4;
+int level = 1;
 
 void setup() {
   size(600, 400);
@@ -112,6 +112,7 @@ void fader() {
         if (level == 3) {
           gx=100;
         }
+   
       }
     }
   }

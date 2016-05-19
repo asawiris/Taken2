@@ -24,7 +24,7 @@ class PHONE {
     rect(x, y, 110, 160, 12, 12, 12, 12);
     fill(#000000);
     rect(x+5, y+5, 100, 140, 12, 12, 12, 12);
-    if (level==1) {
+    if (level==1 && NEW==0) {
       textFont(font, 9);
       fill(#ffffff);
       if (cSelect==1) {
@@ -35,7 +35,7 @@ class PHONE {
       }
       text("URGENT\nMeet me at\nthe deli!", x+7, y+80);
     }
-    if (level == 3) {
+    if (level == 3 || NEW==1) {
       textFont(font, 9);
       fill(#ffffff);
       text("New\nObjective:\n\nFind your\nson!", x+9, y+25);
