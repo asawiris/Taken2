@@ -1,4 +1,4 @@
-CLOUD C10 = new CLOUD(-300, 350, 4000, 2);
+CLOUD C10 = new CLOUD(-400, 350, 4000, 2);
 
 PORTAL p2 = new PORTAL(50, 350, 1);
 
@@ -21,6 +21,7 @@ void deli() {
     p3.update();
   }
 
+println(gy);
 
   image(TABLE, storyX+240, storyY-39, 100, 100);
   image(CHAIR, storyX+185, storyY-49, 100, 100);

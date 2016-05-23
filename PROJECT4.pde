@@ -1,5 +1,6 @@
 //github
-int page=0;
+int phone=0;
+int page=1;
 int pause = 0;
 int music=0;
 int nextLevel;
@@ -112,7 +113,6 @@ void fader() {
         if (level == 3) {
           gx=100;
         }
-   
       }
     }
   }
@@ -182,6 +182,8 @@ void keyPressed() {
     }
     if (keyCode == LEFT) {
       goLeft= 1;
+    }
+    if (key == ' ') {
     }
   }
 }
