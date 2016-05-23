@@ -3,6 +3,7 @@
 //int alpha2=255;
 //int alpha3=0;
 float c2X=1000-cameraX;
+int change=30, change2=20;
 
 CLOUD c1 = new CLOUD(-100, 350, 4100, 2);
 CLOUD c2 = new CLOUD(1200, 280, 200, 1);
@@ -69,30 +70,86 @@ void map1() {
   textFont(font, 18);
   fill(#ffffff, HTPAlpha);
   text("HOW TO PLAY:", HTPX+100, HTPY+40);
-  textFont(font, 12);
+  fill(#000000, HTPAlpha);
+  rect(HTPX+97, HTPY+40, 214, 6);
   fill(#ffffff, HTPAlpha);
-  text("Go Left", HTPX+7, HTPY+185);
-  text("Go Right", HTPX+155, HTPY+185);
-  text("Jump", HTPX+98, HTPY+120);
+  rect(HTPX+99, HTPY+41.5, 210, 3);
+
+  textFont(font, 12);
+  fill(#000000, HTPAlpha);
+  text("Go Left", HTPX+9, HTPY+185-change);
+  fill(#ffffff, HTPAlpha);
+  text("Go Left", HTPX+7, HTPY+185-change);
+
+  fill(#000000, HTPAlpha);
+  text("Go Right", HTPX+157, HTPY+186-change);
+  fill(#ffffff, HTPAlpha);
+  text("Go Right", HTPX+155, HTPY+185-change);
+
+  fill(#000000, HTPAlpha);
+  text("Jump", HTPX+100, HTPY+121-change);
+  fill(#ffffff, HTPAlpha);
+  text("Jump", HTPX+98, HTPY+120-change);
+
+  
+  fill(#000000, HTPAlpha);
+  text("Display\n Phone", HTPX+284, HTPY+157);
+  fill(#ffffff, HTPAlpha);
+  text("Display\n Phone", HTPX+282, HTPY+156);
+  
+
+  fill(#000000, HTPAlpha);
+  rect(HTPX+300, HTPY+90-change2, 10, 10);
+  rect(HTPX+310, HTPY+80-change2, 10, 10);
+  rect(HTPX+320, HTPY+80-change2, 10, 10);
+  rect(HTPX+330, HTPY+80-change2, 10, 10);
+  rect(HTPX+340, HTPY+90-change2, 10, 10);
+  rect(HTPX+290, HTPY+100-change2, 10, 10);
+  rect(HTPX+290, HTPY+110-change2, 10, 10);
+  rect(HTPX+350, HTPY+110-change2, 10, 10);
+  rect(HTPX+350, HTPY+100-change2, 10, 10);
+  rect(HTPX+350, HTPY+120-change2, 10, 10);
+  rect(HTPX+290, HTPY+120-change2, 10, 10);
+  rect(HTPX+350, HTPY+130-change2, 10, 10);
+  rect(HTPX+290, HTPY+130-change2, 10, 10);
+  rect(HTPX+340, HTPY+140-change2, 10, 10);
+  rect(HTPX+300, HTPY+140-change2, 10, 10);
+  rect(HTPX+310, HTPY+150-change2, 10, 10);
+  rect(HTPX+320, HTPY+150-change2, 10, 10);
+  rect(HTPX+330, HTPY+150-change2, 10, 10);
+  rect(HTPX+320, HTPY+100-change2, 10, 10);
+  rect(HTPX+320, HTPY+90-change2, 10, 10);
+  rect(HTPX+320, HTPY+100-change2, 10, 10);
+  rect(HTPX+330, HTPY+90-change2, 10, 10);
+  rect(HTPX+330, HTPY+100-change2, 10, 10);
+  rect(HTPX+340, HTPY+100-change2, 10, 10);
+  rect(HTPX+300,HTPY+110-change2,50,30);
+  rect(HTPX+310,HTPY+140-change2,30,10);
+  fill(#F7FF24, HTPAlpha);
+  rect(HTPX+310, HTPY+90-change2, 10, 10);
+  rect(HTPX+310, HTPY+100-change2, 10, 10);
+  rect(HTPX+300, HTPY+100-change2, 10, 10);
+  rect(HTPX+310, HTPY+110-change2, 10, 10);
+  rect(HTPX+300, HTPY+110-change2, 10, 10);
 
   //arrowLeft
   fill(#000000, HTPAlpha);
-  rect(HTPX+50, HTPY+125, 40, 40, 12, 12, 12, 12);
+  rect(HTPX+50, HTPY+125-change, 40, 40, 12, 12, 12, 12);
   fill(#ffffff, HTPAlpha);
-  rect(HTPX+65, HTPY+142, 19, 5);
-  triangle(HTPX+65, HTPY+154, HTPX+65, HTPY+135, HTPX+55, HTPY+144);
+  rect(HTPX+65, HTPY+142-change, 19, 5);
+  triangle(HTPX+65, HTPY+154-change, HTPX+65, HTPY+135-change, HTPX+55, HTPY+144-change);
   //arrowUP
   fill(#000000, HTPAlpha);
-  rect(HTPX+100, HTPY+125, 40, 40, 12, 12, 12, 12);
+  rect(HTPX+100, HTPY+125-change, 40, 40, 12, 12, 12, 12);
   fill(#ffffff, HTPAlpha);
-  rect(HTPX+118, HTPY+140, 5, 19); 
-  triangle(HTPX+110, HTPY+140, HTPX+130, HTPY+140, HTPX+120.5, HTPY+130);
+  rect(HTPX+118, HTPY+140-change, 5, 19); 
+  triangle(HTPX+110, HTPY+140-change, HTPX+130, HTPY+140-change, HTPX+120.5, HTPY+130-change);
   //arrowRight
   fill(#000000, HTPAlpha);
-  rect(HTPX+150, HTPY+125, 40, 40, 12, 12, 12, 12);
+  rect(HTPX+150, HTPY+125-change, 40, 40, 12, 12, 12, 12);
   fill(#ffffff, HTPAlpha);
-  rect(HTPX+158, HTPY+142, 19, 5);
-  triangle(HTPX+175, HTPY+154, HTPX+175, HTPY+135, HTPX+185, HTPY+144);
+  rect(HTPX+158, HTPY+142-change, 19, 5);
+  triangle(HTPX+175, HTPY+154-change, HTPX+175, HTPY+135-change, HTPX+185, HTPY+144-change);
 
   if (HTPDone==1) {
     HTPAlpha-=10;

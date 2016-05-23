@@ -1,6 +1,6 @@
 //github
 int phone=0;
-int page=1;
+int page=0;
 int pause = 0;
 int music=0;
 int nextLevel;
@@ -34,6 +34,7 @@ void setup() {
   CHAIR = loadImage("data/CHAIR.png");
   HLEFT = loadImage("data/HLEFT.png");
   OLEFT = loadImage("data/OLEFT.png");
+  rCLICK = loadImage("data/CLICK.png");
 }
 
 
@@ -58,7 +59,7 @@ PImage G7 = new PImage(62, 56, ARGB);//moving 2\
 PImage G8 = new PImage(62, 56, ARGB);
 PImage G9 = new PImage(62, 56, ARGB);//standing
 PImage G10 = new PImage(62, 56, ARGB);//standing
-PImage GIRL, BOY, CLOUD, TREE, CHOOSE, TITLE, RED, DELI, STOP, GREY, ORANGE, GREEN, TABLE, OSITTING, HSITTING, SBUB, SBUB2, CHAIR, HLEFT, OLEFT;
+PImage GIRL, BOY, CLOUD, TREE, CHOOSE, TITLE, RED, DELI, STOP, GREY, ORANGE, GREEN, TABLE, OSITTING, HSITTING, SBUB, SBUB2, CHAIR, HLEFT, OLEFT, rCLICK;
 PFont font;
 
 
