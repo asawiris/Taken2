@@ -9,7 +9,7 @@ class CLOUD {
     q = _q;
   }
   void update() {
-    if (gx+5-.5*cameraX > x && gx-5-.5*cameraX < x + w   && gy > y && gy<=y + gvy) {
+    if (gx+5 > x && gx-5 < x + w   && gy > y && gy<=y + gvy) {
       gy = y;
 
 
@@ -18,15 +18,15 @@ class CLOUD {
     }
     fill(#989898);
     if (q==1) {
-      rect(x-.5*cameraX, y, w, 5);
+      rect(x-cameraX, y, w, 5);
     }
     if (q==2) {
       //2 is for floors
 
       fill(#989898);
-      rect(x-.5*cameraX, y, w, 200);
+      rect(x-cameraX, y, w, 200);
       fill(#000000);
-      rect(x-.5*cameraX, y, w, 2);
+      rect(x-cameraX, y, w, 2);
     }
   }
 }

@@ -19,12 +19,12 @@ void setup() {
   TREE = loadImage("data/TREE.png");
   CHOOSE = loadImage("data/CHOOSE.png");
   DELI = loadImage("data/DELI.png");
-  /*
+
   RED = loadImage("data/RED.png");
-   GREY = loadImage("data/GREY.png");
-   ORANGE = loadImage("data/ORANGE.png");
-   GREEN = loadImage("data/GREEN.png");
-   */
+  GREY = loadImage("data/GREY.png");
+  ORANGE = loadImage("data/ORANGE.png");
+  GREEN = loadImage("data/GREEN.png");
+
   TABLE = loadImage("data/TABLE.png");
   OSITTING = loadImage("data/OSITTING.png");
   HSITTING = loadImage("data/HSITTING.png");
@@ -170,7 +170,19 @@ void draw() {
   if (fadeC > 0) {
     fader();
   }
+
+
+  fill(0);
+  text(frameRate, 50, 50);
+  
+  
+  
+  sp  = false;
 }
+
+
+boolean sp = false;
+
 
 void keyPressed() {
   if (page > 0) {
@@ -185,7 +197,7 @@ void keyPressed() {
       goLeft= 1;
     }
     if (key == ' ') {
-    }
+      sp  = true;    }
   }
 }
 void keyReleased() {

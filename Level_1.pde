@@ -39,20 +39,20 @@ void map1() {
   cloud(2100-.6*cameraX, 100 );
   cloud(2350-.6*cameraX, 75);
   cloud(2600-.6*cameraX, 50 );
-  /*
-   buildingRED(600-.5*cameraX, 225);
-   if(gx>100){
-   buildingGREY(785-.5*cameraX, 100);
-   }
-   if(gx>200){
-   //buildingGREEN(930-.5*cameraX,200);
-   }
-   if(gx>200){
-   buildingORANGE(1230-.5*cameraX,100);
-   }
-   */
-  deli(965-.5*cameraX, 100);
-  tree(880-.5*cameraX, 270);
+  
+   buildingRED(600-cameraX, 225);
+   
+   buildingGREY(785-cameraX, 100);
+   
+  // if(gx>200){
+   buildingGREEN(930-cameraX,200);
+   //}
+  // if(gx>200){
+   buildingORANGE(1230-cameraX,100);
+  // }
+   
+  deli(965-cameraX, 100);
+  tree(880-cameraX, 270);
 
 
 

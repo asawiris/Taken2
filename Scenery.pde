@@ -13,20 +13,20 @@ void building(float x, float y, color c, float s) {
 void cloud(float x, float y) {
   image(CLOUD, x, y, 150, 150);
 }
-/*
+
 void buildingRED(float x, float y) {
- image(RED, x, y, 250, 250);
- }
- void buildingGREY(float x, float y) {
- image(GREY, x, y, 500, 500);
- }
- void buildingORANGE(float x, float y) {
- image( ORANGE, x, y, 500, 500);
- }
- void buildingGREEN(float x, float y) {
- image(GREEN, x, y, 500, 500);
- }
- */
+  image(RED, x, y);
+}
+void buildingGREY(float x, float y) {
+  image(GREY, x, y);
+}
+void buildingORANGE(float x, float y) {
+  image( ORANGE, x, y);
+}
+void buildingGREEN(float x, float y) {
+  image(GREEN, x, y);
+}
+
 void deli(float x, float y) {
-  image(DELI, x, y, 500, 500);
+  image(DELI, x, y);
 }

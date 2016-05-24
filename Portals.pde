@@ -11,8 +11,9 @@ class PORTAL {
 
 
   void update() {
-    if (dist(gx - 1 - .5*cameraX, gy, x, y)<5) {
-      gx=x + 1 + .5*cameraX;
+    if (dist(gx, gy, x+25, y)<5) {
+      gx = x+25;
+      println(x);
       pause=1;
       if (fadeC == 0) {
         fadeC = 1;
@@ -23,7 +24,7 @@ class PORTAL {
     for ( int i = 0; i < 8; i++) {
       fill(#FFFF00, 255 - (255*i/8));
 
-      rect(x - 25 - .5 * cameraX, y - 8 - 8*i, 50, 8, 2);
+      rect(x - cameraX, y - 8 - 8*i, 50, 8, 2);
     }
   }
 }

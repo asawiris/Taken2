@@ -9,15 +9,16 @@ class life {
   void update() {
 
 
-    rect(gx-17 - cameraX, gy-55, 30, 55);
-    rect(x-10 - .5*cameraX, y-10, 20, 20);
+    //rect(gx-17 - cameraX, gy-55, 30, 55);
+   
 
-    if (showHeart==1 && ) {
+    if (showHeart==1 ) {
+     
       showHeart=0;
       life++;
     }
     if (showHeart==1) {
-      image(HEART, x-.5*cameraX, y, 20, 20);
+      image(HEART, x-cameraX, y, 20, 20);
     }
   }
 }

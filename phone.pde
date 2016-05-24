@@ -1,25 +1,56 @@
 int dismiss=0, appear=1, pvy=5, comeUP, goDown;
 
+
+int pAppear = 0;
+//1 is go up
+//2 is peak
+//3 go down
+
 class PHONE {
-  int x, y;
+  float x, y;
   PHONE(int _x, int _y) {
     x=_x;
     y=_y;
   }
   void update() {
-    if (dismiss == 0 && appear==1 && mousePressed) {
-      comeUP=1;
+    if (sp && pAppear == 0) {
+      pAppear = 1;
+      // sp  = false;
     }
-    if (comeUP==1) {
-      y-=pvy;
-      if (y<=250) {
-        y=250;
-        dismiss=1;
-        pvy=0;
-        appear=0;
-        comeUP=2;
+
+
+
+    if (pAppear == 1) {
+      y=lerp(y, 250, .15);
+     
+      if (y<=251) {
+        y=251;
+        pAppear = 2;
       }
     }
+
+
+    if (sp && pAppear == 2) {
+      pAppear = 3;
+      // sp  = false;
+    }
+    
+    
+
+
+
+    if (pAppear == 3) {
+      y=lerp(y, 410, .2);
+      if (y>=409) {
+        y= 409;
+        pAppear = 0;
+      }
+    }
+
+
+
+
+
     fill(#C6C6C6);
     rect(x, y, 110, 160, 12, 12, 12, 12);
     fill(#000000);
@@ -39,19 +70,6 @@ class PHONE {
       textFont(font, 9);
       fill(#ffffff);
       text("New\nObjective:\n\nFind your\nson!", x+9, y+25);
-    }
-    if (dismiss==1 && appear == 0 && mousePressed) {
-      goDown=1;
-    }
-    if (goDown==1) {
-      pvy=5;
-      y+=pvy;
-      if (y>=410) {
-        y=410;
-        dismiss=0;
-        appear=1;
-        goDown=2;
-      }
     }
   }
 }
