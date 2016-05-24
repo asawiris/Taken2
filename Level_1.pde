@@ -184,7 +184,7 @@ void map1() {
   }
   p1.update();
   P.update();
-  HEART1.update();
+ HEART1.update();
   if (gy>450) {
     ouch();
   }

@@ -7,14 +7,17 @@ class life {
     y=_y;
   }
   void update() {
-    
-    rect(x-20 - .5*cameraX,y-20,40,40);
-    if (showHeart==1 && dist(gx, gy, x-.5*cameraX, y)<40) {
+
+
+    rect(gx-17 - cameraX, gy-55, 30, 55);
+    rect(x-10 - .5*cameraX, y-10, 20, 20);
+
+    if (showHeart==1 && ) {
       showHeart=0;
       life++;
     }
     if (showHeart==1) {
-      image(HEART, x-.5*cameraX, y, 40, 40);
+      image(HEART, x-.5*cameraX, y, 20, 20);
     }
   }
 }
