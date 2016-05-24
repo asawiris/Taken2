@@ -7,6 +7,9 @@ int change=30, change2=20;
 
 CLOUD c1 = new CLOUD(-100, 350, 4100, 2);
 CLOUD c2 = new CLOUD(1200, 280, 200, 1);
+CLOUD c3 = new CLOUD(1350,250,150,1);
+
+life HEART1 = new life(400,330);
 
 PORTAL p1 = new PORTAL(962, 350, 3);
 int phoneX=450, phoneY=400, HTPX=100, HTPY=100, HTPAlpha=255, HTPDone;
@@ -14,8 +17,12 @@ PHONE P = new PHONE(phoneX, phoneY);
 
 
 
+
+
 void map1() {
   background(#2AC0F5);  
+
+
 
   scenery();
 
@@ -171,9 +178,13 @@ void map1() {
   bordersAndCamera();
   jump = 1;
   c1.update();
+  if(NEW == 1){
   c2.update();
+  c3.update();
+  }
   p1.update();
   P.update();
+  HEART1.update();
   if (gy>450) {
     ouch();
   }

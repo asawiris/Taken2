@@ -1,4 +1,4 @@
-CLOUD C10 = new CLOUD(-400, 350, 4000, 2);
+CLOUD C10 = new CLOUD(-1000, 350, 6000, 2);
 
 PORTAL p2 = new PORTAL(50, 350, 1);
 

@@ -1,8 +1,8 @@
 //github
 int phone=0;
 int page=0;
-int pause = 0;
-int music=0;
+int pause = 1;
+
 int nextLevel;
 int level = 1;
 
@@ -34,7 +34,7 @@ void setup() {
   CHAIR = loadImage("data/CHAIR.png");
   HLEFT = loadImage("data/HLEFT.png");
   OLEFT = loadImage("data/OLEFT.png");
-  rCLICK = loadImage("data/CLICK.png");
+  HEART = loadImage("data/HEART.png");
 }
 
 
@@ -59,7 +59,7 @@ PImage G7 = new PImage(62, 56, ARGB);//moving 2\
 PImage G8 = new PImage(62, 56, ARGB);
 PImage G9 = new PImage(62, 56, ARGB);//standing
 PImage G10 = new PImage(62, 56, ARGB);//standing
-PImage GIRL, BOY, CLOUD, TREE, CHOOSE, TITLE, RED, DELI, STOP, GREY, ORANGE, GREEN, TABLE, OSITTING, HSITTING, SBUB, SBUB2, CHAIR, HLEFT, OLEFT, rCLICK;
+PImage GIRL, BOY, CLOUD, TREE, CHOOSE, TITLE, RED, DELI, STOP, GREY, ORANGE, GREEN, TABLE, OSITTING, HSITTING, SBUB, SBUB2, CHAIR, HLEFT, OLEFT, HEART;
 PFont font;
 
 
@@ -106,6 +106,7 @@ void fader() {
           if (NEW==1) {
             gx=1700;
           }
+          
         }
         if (level==2) {
           gx=40;
@@ -136,32 +137,22 @@ void fader() {
 void draw() {
   noStroke();
 
-
   if (page==0) {
-
     titlePage();
-    //music=1;
   }
-
-
   if (page==1) {
-
     if (level == 1) {
       map1();
     }
-
-
     if (level == 2) {
       map2();
     }
-
     if (level == 3) {
       deli();
     }
     if (level==4) {
       story();
     }
-
     characterAnimation();
   }
   if (page == 3) {
@@ -188,6 +179,7 @@ void keyPressed() {
     }
   }
 }
+
 void keyReleased() {
   if (keyCode == RIGHT) {
     goRight = 0;
@@ -196,6 +188,7 @@ void keyReleased() {
     goLeft= 0;
   }
 }
+
 void mousePressed() {
   if (page == 0 && dist(mouseX, mouseY, chooseX, chooseY)<25) {
     if (fadeC == 0) {

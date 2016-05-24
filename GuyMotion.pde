@@ -8,10 +8,10 @@ void movement() {
   //rect(gx-17 - cameraX,gy-55,30,55);
 
   if (goRight == 1 ) {
-    gx += 6;
+    gx += 8;
   }
   if (goLeft == 1 ) {
-    gx-=6;
+    gx -= 8;
   }
   gvy+=1;
   gy+=gvy;
