@@ -48,7 +48,7 @@ void map1() {
   buildingGREEN(970-cameraX, 200);
   //}
   // if(gx>200){
-  buildingORANGE(1380-cameraX, 125);
+  buildingORANGE(1380-cameraX, 115);
   // }
 
   deli(1190-cameraX, 50);

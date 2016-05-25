@@ -34,7 +34,7 @@ void setup() {
   CHAIR = loadImage("data/CHAIR.png");
   HLEFT = loadImage("data/HLEFT.png");
   OLEFT = loadImage("data/OLEFT.png");
-  HEART = loadImage("data/heart.png");
+  HEART = loadImage("data/HEART.png");
 }
 
 
