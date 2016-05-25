@@ -7,9 +7,9 @@ int change=30, change2=20;
 
 CLOUD c1 = new CLOUD(-100, 350, 4100, 2);
 CLOUD c2 = new CLOUD(1400, 280, 200, 1);
-CLOUD c3 = new CLOUD(1650,250,150,1);
+CLOUD c3 = new CLOUD(1650, 250, 150, 1);
 
-life HEART1 = new life(400,330);
+life HEART1 = new life(400, 330);
 
 PORTAL p1 = new PORTAL(1160, 350, 3);
 int phoneX=450, phoneY=400, HTPX=100, HTPY=100, HTPAlpha=255, HTPDone;
@@ -39,18 +39,18 @@ void map1() {
   cloud(2100-.6*cameraX, 100 );
   cloud(2350-.6*cameraX, 75);
   cloud(2600-.6*cameraX, 50 );
-  
-   buildingRED(600-cameraX, 225);
-   
-   buildingGREY(788-cameraX, 100);
-   
+
+  buildingRED(600-cameraX, 225);
+
+  buildingGREY(788-cameraX, 100);
+
   // if(gx>200){
-   buildingGREEN(970-cameraX,200);
-   //}
+  buildingGREEN(970-cameraX, 200);
+  //}
   // if(gx>200){
-   buildingORANGE(1380-cameraX,125);
+  buildingORANGE(1380-cameraX, 125);
   // }
-   
+
   deli(1190-cameraX, 50);
   tree(875-cameraX, 270);
 
@@ -98,52 +98,19 @@ void map1() {
   fill(#ffffff, HTPAlpha);
   text("Jump", HTPX+98, HTPY+120-change);
 
-  
+
   fill(#000000, HTPAlpha);
   text("Show/Hide\n  Phone", HTPX+267, HTPY+142);
   fill(#ffffff, HTPAlpha);
   text("Show/Hide\n  Phone", HTPX+265, HTPY+141);
-  
-  
+
+
 
   fill(#000000, HTPAlpha);
-  /*
-  rect(HTPX+300, HTPY+90-change2, 10, 10);
-  rect(HTPX+310, HTPY+80-change2, 10, 10);
-  rect(HTPX+320, HTPY+80-change2, 10, 10);
-  rect(HTPX+330, HTPY+80-change2, 10, 10);
-  rect(HTPX+340, HTPY+90-change2, 10, 10);
-  rect(HTPX+290, HTPY+100-change2, 10, 10);
-  rect(HTPX+290, HTPY+110-change2, 10, 10);
-  rect(HTPX+350, HTPY+110-change2, 10, 10);
-  rect(HTPX+350, HTPY+100-change2, 10, 10);
-  rect(HTPX+350, HTPY+120-change2, 10, 10);
-  rect(HTPX+290, HTPY+120-change2, 10, 10);
-  rect(HTPX+350, HTPY+130-change2, 10, 10);
-  rect(HTPX+290, HTPY+130-change2, 10, 10);
-  rect(HTPX+340, HTPY+140-change2, 10, 10);
-  rect(HTPX+300, HTPY+140-change2, 10, 10);
-  rect(HTPX+310, HTPY+150-change2, 10, 10);
-  rect(HTPX+320, HTPY+150-change2, 10, 10);
-  rect(HTPX+330, HTPY+150-change2, 10, 10);
-  rect(HTPX+320, HTPY+100-change2, 10, 10);
-  rect(HTPX+320, HTPY+90-change2, 10, 10);
-  rect(HTPX+320, HTPY+100-change2, 10, 10);
-  rect(HTPX+330, HTPY+90-change2, 10, 10);
-  rect(HTPX+330, HTPY+100-change2, 10, 10);
-  rect(HTPX+340, HTPY+100-change2, 10, 10);
-  rect(HTPX+300,HTPY+110-change2,50,30);
-  rect(HTPX+310,HTPY+140-change2,30,10);
-  fill(#F7FF24, HTPAlpha);
-  rect(HTPX+310, HTPY+90-change2, 10, 10);
-  rect(HTPX+310, HTPY+100-change2, 10, 10);
-  rect(HTPX+300, HTPY+100-change2, 10, 10);
-  rect(HTPX+310, HTPY+110-change2, 10, 10);
-  rect(HTPX+300, HTPY+110-change2, 10, 10);
-*/
-rect(HTPX+260, HTPY+90,110,30,12,12,12,12);
-fill(255,HTPAlpha);
-text("SPACE",HTPX+287,HTPY+112);
+
+  rect(HTPX+260, HTPY+90, 110, 30, 12, 12, 12, 12);
+  fill(255, HTPAlpha);
+  text("SPACE", HTPX+287, HTPY+112);
   //arrowLeft
   fill(#000000, HTPAlpha);
   rect(HTPX+50, HTPY+125-change, 40, 40, 12, 12, 12, 12);
@@ -183,13 +150,13 @@ text("SPACE",HTPX+287,HTPY+112);
   bordersAndCamera();
   jump = 1;
   c1.update();
-  if(NEW == 1){
-  c2.update();
-  c3.update();
+  if (NEW == 1) {
+    c2.update();
+    c3.update();
   }
   p1.update();
   P.update();
- HEART1.update();
+  HEART1.update();
   if (gy>450) {
     ouch();
   }

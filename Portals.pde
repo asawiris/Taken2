@@ -8,8 +8,6 @@ class PORTAL {
     y = _y;
     nextMap = _nextMap;
   }
-
-
   void update() {
     if (dist(gx, gy, x+25, y)<5) {
       gx = x+25;
@@ -20,7 +18,6 @@ class PORTAL {
         nextLevel = nextMap;
       }
     }
-
     for ( int i = 0; i < 8; i++) {
       fill(#FFFF00, 255 - (255*i/8));
 

@@ -1,5 +1,4 @@
 //platform
-
 class CLOUD {
   int x, y, w, q;
   CLOUD(int _x, int _y, int _w, int _q) {
@@ -11,8 +10,6 @@ class CLOUD {
   void update() {
     if (gx+5 > x && gx-5 < x + w   && gy > y && gy<=y + gvy) {
       gy = y;
-
-
       jump = 0;
       gvy = 0;
     }
@@ -22,7 +19,6 @@ class CLOUD {
     }
     if (q==2) {
       //2 is for floors
-
       fill(#989898);
       rect(x-cameraX, y, w, 200);
       fill(#000000);
