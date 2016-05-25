@@ -7,7 +7,6 @@ int mFrame = 1;
 void sprite() {
   PImage whole = loadImage("data/COMPLETERIGHT.png");
   PImage whole2 = loadImage("data/COMPLETELEFT.png");
-
   PImage whole3 = loadImage("data/characterGirlRight.png");
   PImage whole4 = loadImage("data/characterGirlLeft.png");
 

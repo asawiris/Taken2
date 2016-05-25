@@ -17,12 +17,14 @@ void map2() {
   if (pause==0) {
     movement();
   }
+  /*
   if (pause==1) {
     gy-=5;
     if (gy<0) {
       pause=3;
     }
   }
+  */
 
   bordersAndCamera();
 
@@ -32,6 +34,6 @@ void map2() {
   c6.update();
   c7.update();
   if (gy>450) {
-    ouch();
+    lose();
   }
 }

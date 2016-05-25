@@ -5,6 +5,7 @@ int pause = 0;
 int music=0;
 int nextLevel;
 int level = 1;
+
 boolean sp = false;
 
 void setup() {
@@ -130,7 +131,9 @@ void draw() {
     if (level==4) {
       story();
     }
+  
     characterAnimation();
+    
   }
   if (page == 3) {
     chooseCharacter();
@@ -157,6 +160,9 @@ void keyPressed() {
     }
     if (key == ' ') {
       sp  = true;
+    }
+    if (key == 'p'){
+     life--; 
     }
   }
 }

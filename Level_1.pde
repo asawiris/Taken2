@@ -23,7 +23,7 @@ PHONE P = new PHONE(phoneX, phoneY);
 
 void map1() {
   background(#2AC0F5);  
-  
+  text(life,50,50);
   scenery();
   cloud(100-.6*cameraX, C1Y);
   cloud(350-.6*cameraX, 50);
@@ -155,6 +155,6 @@ void map1() {
   HEART2.update();
   HEART3.update();
   if (gy>450) {
-    ouch();
+    lose();
   }
 }
