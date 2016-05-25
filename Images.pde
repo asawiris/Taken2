@@ -57,7 +57,6 @@ void characterAnimation() {
     }
   }
   if (goLeft == 1 ) {
-
     if (mFrame > 0) {
       mFrame =-1;
     }
@@ -71,26 +70,22 @@ void characterAnimation() {
     }
   }
 }
-void harryDraw() {
 
+void harryDraw() {
   if (jump ==1 && goRight == 1) {
     mFrame = 4;
   }
-
   if (jump ==1 && goLeft == 1) {
     mFrame = -4;
   }
-
   if (goRight == 0 && goLeft == 0) {
     if (mFrame >= 2) {
       mFrame = 1;
     }
-
     if (mFrame <= -2) {
       mFrame = -1;
     }
   }
-
   if (mFrame == 1) {
     image(H1, gx - 3 - cameraX, gy-29, 62, 56);
   }
@@ -116,8 +111,8 @@ void harryDraw() {
     image(H8, gx - 3 - cameraX, gy-29, 62, 56);
   }
 }
-void oliviaDraw() {
 
+void oliviaDraw() {
   if (jump ==1 && goRight == 1) {
     mFrame = 4;
   }

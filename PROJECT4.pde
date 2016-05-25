@@ -5,6 +5,7 @@ int pause = 0;
 int music=0;
 int nextLevel;
 int level = 1;
+boolean sp = false;
 
 void setup() {
   size(600, 400);
@@ -37,8 +38,6 @@ void setup() {
   HEART = loadImage("data/HEART.png");
 }
 
-
-
 PImage H1 = new PImage(62, 56, ARGB);//standing
 PImage H2 = new PImage(62, 56, ARGB);//moving 1
 PImage H3 = new PImage(62, 56, ARGB);//moving 2\
@@ -61,37 +60,21 @@ PImage G9 = new PImage(62, 56, ARGB);//standing
 PImage G10 = new PImage(62, 56, ARGB);//standing
 PImage GIRL, BOY, CLOUD, TREE, CHOOSE, TITLE, RED, DELI, STOP, GREY, ORANGE, GREEN, TABLE, OSITTING, HSITTING, SBUB, SBUB2, CHAIR, HLEFT, OLEFT, HEART;
 PFont font;
-
-
-
-
 int fadeC = 3;
 int alphaC = 255;
 //1 start to fade to black
 //3 means you fade from black
 //0 means no fading occurs
 
-
-
-
-
-
-
-
 void fader() {
-
   if (fadeC == 1) {
     fadeC = 2;
   }
-
   if (fadeC == 2) {
     alphaC+=10;
-
     if (alphaC >=255) {//fully black
       alphaC = 255;
       fadeC = 3;
-
-
       if (page == 0) {
         page=3;
         goRight = 0;
@@ -117,51 +100,36 @@ void fader() {
       }
     }
   }
-
-
   if (fadeC == 3) {
     alphaC -= 20;
-
     if (alphaC <=0) {
       alphaC = 0;
       fadeC = 0;
     }
   }
-
   fill(#000000, alphaC);
   rect(-5, -5, width+10, height+10);
 }
 
-
 void draw() {
   noStroke();
-
-
   if (page==0) {
-
     titlePage();
     //music=1;
   }
-
-
   if (page==1) {
-
     if (level == 1) {
       map1();
     }
-
-
     if (level == 2) {
       map2();
     }
-
     if (level == 3) {
       deli();
     }
     if (level==4) {
       story();
     }
-
     characterAnimation();
   }
   if (page == 3) {
@@ -170,19 +138,10 @@ void draw() {
   if (fadeC > 0) {
     fader();
   }
-
-
-  fill(0);
-  text(frameRate, 50, 50);
-  
-  
-  
+  //fill(0);
+  //text(frameRate, 50, 50);
   sp  = false;
 }
-
-
-boolean sp = false;
-
 
 void keyPressed() {
   if (page > 0) {
@@ -197,9 +156,11 @@ void keyPressed() {
       goLeft= 1;
     }
     if (key == ' ') {
-      sp  = true;    }
+      sp  = true;
+    }
   }
 }
+
 void keyReleased() {
   if (keyCode == RIGHT) {
     goRight = 0;
@@ -208,6 +169,7 @@ void keyReleased() {
     goLeft= 0;
   }
 }
+
 void mousePressed() {
   if (page == 0 && dist(mouseX, mouseY, chooseX, chooseY)<25) {
     if (fadeC == 0) {

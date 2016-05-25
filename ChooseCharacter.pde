@@ -3,10 +3,10 @@ int startX = 300, startY = 185;
 int harryX = 156, harryY = 156, jadeX = 355, jadeY = 156;
 int harryRect=0, jadeRect=0, alpha, fade=0;
 int chosen=0;
+
 void chooseCharacter() {
   background(#2AC0F5);
   image(CHOOSE, 300, 200);
-
   if (chosen==0) {
     if (mouseX>harryX && mouseX<harryX+82 && mouseY>harryY && mouseY<harryY+175)     
       harryRect=1;
@@ -28,7 +28,6 @@ void chooseCharacter() {
     fill(#FFF93B);
     rect(harryX-5, harryY-5, 92, 185, 12, 12, 12, 12);
   }
-
   if (alpha>=255) {
     page=1;
   }

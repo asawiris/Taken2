@@ -10,6 +10,8 @@ CLOUD c2 = new CLOUD(1400, 280, 200, 1);
 CLOUD c3 = new CLOUD(1650, 250, 150, 1);
 
 life HEART1 = new life(400, 330);
+life HEART2 = new life(500,330);
+life HEART3 = new life(600,330);
 
 PORTAL p1 = new PORTAL(1160, 350, 3);
 int phoneX=450, phoneY=400, HTPX=100, HTPY=100, HTPAlpha=255, HTPDone;
@@ -21,13 +23,8 @@ PHONE P = new PHONE(phoneX, phoneY);
 
 void map1() {
   background(#2AC0F5);  
-
-
-
+  
   scenery();
-
-
-
   cloud(100-.6*cameraX, C1Y);
   cloud(350-.6*cameraX, 50);
   cloud(600-.6*cameraX, 100 );
@@ -142,8 +139,6 @@ void map1() {
   else
     oliviaDraw();
 
-
-
   if (pause==0) {
     movement();
   }
@@ -157,6 +152,8 @@ void map1() {
   p1.update();
   P.update();
   HEART1.update();
+  HEART2.update();
+  HEART3.update();
   if (gy>450) {
     ouch();
   }
