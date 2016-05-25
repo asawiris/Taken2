@@ -6,12 +6,12 @@ float c2X=1000-cameraX;
 int change=30, change2=20;
 
 CLOUD c1 = new CLOUD(-100, 350, 4100, 2);
-CLOUD c2 = new CLOUD(1200, 280, 200, 1);
-CLOUD c3 = new CLOUD(1350,250,150,1);
+CLOUD c2 = new CLOUD(1400, 280, 200, 1);
+CLOUD c3 = new CLOUD(1650,250,150,1);
 
 life HEART1 = new life(400,330);
 
-PORTAL p1 = new PORTAL(962, 350, 3);
+PORTAL p1 = new PORTAL(1160, 350, 3);
 int phoneX=450, phoneY=400, HTPX=100, HTPY=100, HTPAlpha=255, HTPDone;
 PHONE P = new PHONE(phoneX, phoneY);
 
@@ -42,17 +42,17 @@ void map1() {
   
    buildingRED(600-cameraX, 225);
    
-   buildingGREY(785-cameraX, 100);
+   buildingGREY(788-cameraX, 100);
    
   // if(gx>200){
-   buildingGREEN(930-cameraX,200);
+   buildingGREEN(970-cameraX,200);
    //}
   // if(gx>200){
-   buildingORANGE(1230-cameraX,100);
+   buildingORANGE(1380-cameraX,125);
   // }
    
-  deli(965-cameraX, 100);
-  tree(880-cameraX, 270);
+  deli(1190-cameraX, 50);
+  tree(875-cameraX, 270);
 
 
 
@@ -62,7 +62,7 @@ void map1() {
 
   //deli(965-cameraX, 100);
   // tree(880-cameraX, 270);
-  if (gx>=845) {
+  if (gx>=575) {
     HTPDone=1;
   }
 
@@ -100,12 +100,14 @@ void map1() {
 
   
   fill(#000000, HTPAlpha);
-  text("Display\n Phone", HTPX+284, HTPY+157);
+  text("Show/Hide\n  Phone", HTPX+267, HTPY+142);
   fill(#ffffff, HTPAlpha);
-  text("Display\n Phone", HTPX+282, HTPY+156);
+  text("Show/Hide\n  Phone", HTPX+265, HTPY+141);
+  
   
 
   fill(#000000, HTPAlpha);
+  /*
   rect(HTPX+300, HTPY+90-change2, 10, 10);
   rect(HTPX+310, HTPY+80-change2, 10, 10);
   rect(HTPX+320, HTPY+80-change2, 10, 10);
@@ -138,7 +140,10 @@ void map1() {
   rect(HTPX+300, HTPY+100-change2, 10, 10);
   rect(HTPX+310, HTPY+110-change2, 10, 10);
   rect(HTPX+300, HTPY+110-change2, 10, 10);
-
+*/
+rect(HTPX+260, HTPY+90,110,30,12,12,12,12);
+fill(255,HTPAlpha);
+text("SPACE",HTPX+287,HTPY+112);
   //arrowLeft
   fill(#000000, HTPAlpha);
   rect(HTPX+50, HTPY+125-change, 40, 40, 12, 12, 12, 12);

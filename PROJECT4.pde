@@ -1,6 +1,6 @@
 //github
 int phone=0;
-int page=0;
+int page=1;
 int pause = 0;
 int music=0;
 int nextLevel;
@@ -104,7 +104,7 @@ void fader() {
         level = nextLevel; 
         if (level == 1) {
           if (NEW==1) {
-            gx=1700;
+            gx=1300;
           }
         }
         if (level==2) {
