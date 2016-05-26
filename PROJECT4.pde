@@ -5,15 +5,18 @@ int pause = 0;
 int music=0;
 int nextLevel;
 int level = 1;
-
+int alive=1;
 boolean sp = false;
+
 
 void setup() {
   size(600, 400);
   frameRate(30);
   noStroke();
   imageMode(CENTER);
+  
   sprite();
+  
   TITLE = loadImage("data/TITLE.png");
   CLOUD = loadImage("data/cloud.png");
   GIRL = loadImage("data/GIRL.png");
@@ -21,12 +24,10 @@ void setup() {
   TREE = loadImage("data/TREE.png");
   CHOOSE = loadImage("data/CHOOSE.png");
   DELI = loadImage("data/DELI.png");
-
   RED = loadImage("data/RED.png");
   GREY = loadImage("data/GREY.png");
   ORANGE = loadImage("data/ORANGE.png");
   GREEN = loadImage("data/GREEN.png");
-
   TABLE = loadImage("data/TABLE.png");
   OSITTING = loadImage("data/OSITTING.png");
   HSITTING = loadImage("data/HSITTING.png");
@@ -131,9 +132,7 @@ void draw() {
     if (level==4) {
       story();
     }
-  
     characterAnimation();
-    
   }
   if (page == 3) {
     chooseCharacter();
@@ -161,8 +160,8 @@ void keyPressed() {
     if (key == ' ') {
       sp  = true;
     }
-    if (key == 'p'){
-     life--; 
+    if (key == 'p') {
+      life--;
     }
   }
 }

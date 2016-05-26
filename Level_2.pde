@@ -17,17 +17,9 @@ void map2() {
   if (pause==0) {
     movement();
   }
-  /*
-  if (pause==1) {
-    gy-=5;
-    if (gy<0) {
-      pause=3;
-    }
-  }
-  */
+ 
 
   bordersAndCamera();
-
   jump = 1;//1 line of code. falling jump fix
   c4.update();
   c5.update();

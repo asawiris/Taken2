@@ -7,9 +7,6 @@ void scenery() {
 void tree(float x, float y) {
   image(TREE, x, y);
 }
-void building(float x, float y, color c, float s) {
-  rect(x, y,100,50);
-}
 void cloud(float x, float y) {
   image(CLOUD, x, y);
 }

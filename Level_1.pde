@@ -23,7 +23,7 @@ PHONE P = new PHONE(phoneX, phoneY);
 
 void map1() {
   background(#2AC0F5);  
-  text(life,50,50);
+  //text(life,50,50);
   scenery();
   cloud(100-.6*cameraX, C1Y);
   cloud(350-.6*cameraX, 50);
@@ -100,11 +100,7 @@ void map1() {
   text("Show/Hide\n  Phone", HTPX+267, HTPY+142);
   fill(#ffffff, HTPAlpha);
   text("Show/Hide\n  Phone", HTPX+265, HTPY+141);
-
-
-
   fill(#000000, HTPAlpha);
-
   rect(HTPX+260, HTPY+90, 110, 30, 12, 12, 12, 12);
   fill(255, HTPAlpha);
   text("SPACE", HTPX+287, HTPY+112);
@@ -156,5 +152,6 @@ void map1() {
   HEART3.update();
   if (gy>450) {
     lose();
+    alive=0;
   }
 }

@@ -1,4 +1,5 @@
-int storyX=220, storyY=350, endStory=1, NEW;
+int storyX=220, storyY=350, endStory=1, NEW, talkVar = 1;// 1 // 2// 3
+float phraseVar = 0;
 
 String phrase1 = "Hey how are\nyou!How's\nyour day\nbeen?";
 String phrase2 = "Not so\ngreat. We\nhave an\nissue."; 
@@ -7,16 +8,13 @@ String phrase4 = "Someone\nbroke into\nJoey's\nDaycare!";
 String phrase5 = "Oh no! We\nhave to get\nto him!"; 
 String phrase6 = "I did it\nlast time.\nIt's your\nturn.";
 String phrase7 = "";
-int talkVar = 1; // 1 // 2// 3
 String phrase0 = phrase1;
-float phraseVar = 0;
 
 void story() {
   background(#FFFFFF);
   image(OSITTING, storyX, storyY, 150, 150);
   image(TABLE, storyX+74, storyY-10, 150, 150);
   image(HSITTING, storyX+150, storyY, 150, 150);
-
   if (talkVar == 1 || talkVar == 3 || talkVar == 5) {
     image(SBUB, 260, 260, 200, 200);
   }
@@ -50,6 +48,7 @@ void story() {
         //level=3;
         NEW=1;
         fadeC=1;
+        objective=1;
       }
     }
   }

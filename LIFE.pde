@@ -8,8 +8,9 @@ class life {
     y=_y;
   }
   void update() {
-    if(life<=0){
+    if(life==0){
      lose(); 
+     alive=0;
     }
     if(life==1){
       image(HEART, 30, 30);
