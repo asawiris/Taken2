@@ -3,8 +3,10 @@ int mFrameRIGHT = 1;
 int mTickLEFT = 1;
 int mFrameLEFT = 1;
 int mFrame = 1;
+boolean ALIVE=true;
 
 void sprite() {
+
   PImage whole = loadImage("data/COMPLETERIGHT.png");
   PImage whole2 = loadImage("data/COMPLETELEFT.png");
   PImage whole3 = loadImage("data/characterGirlRight.png");
@@ -42,6 +44,7 @@ void sprite() {
 }
 
 void characterAnimation() {
+
   if (goRight == 1 ) {
     if (mFrame < 0) {
       mFrame=1;
@@ -69,6 +72,7 @@ void characterAnimation() {
     }
   }
 }
+
 
 void harryDraw() {
   if (jump ==1 && goRight == 1) {
@@ -109,6 +113,15 @@ void harryDraw() {
   if (mFrame == -4) {
     image(H8, gx - 3 - cameraX, gy-29, 62, 56);
   }
+  
+  
+  
+  if(mFrame == -6){
+   image(H10, gx - 3 - cameraX, gy-29, 62, 56);
+  }
+  
+  
+  
 }
 
 void oliviaDraw() {

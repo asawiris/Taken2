@@ -19,9 +19,8 @@ class PORTAL {
       }
     }
     for ( int i = 0; i < 8; i++) {
-      fill(#FFFF00, 255 - (255*i/8));
-
-      rect(x - cameraX, y - 8 - 8*i, 50, 8, 2);
+      fill(#FFFF00, 255 - (255*i/10));
+      rect(x - cameraX, y - 8 - 8*i, 50, 8);
     }
   }
 }

@@ -4,14 +4,15 @@
 //int alpha3=0;
 float c2X=1000-cameraX;
 int change=30, change2=20;
+float time=300;
 
 CLOUD c1 = new CLOUD(-100, 350, 4100, 2);
 CLOUD c2 = new CLOUD(1400, 280, 200, 1);
 CLOUD c3 = new CLOUD(1650, 250, 150, 1);
 
-life HEART1 = new life(400, 330);
-life HEART2 = new life(500,330);
-life HEART3 = new life(600,330);
+life HEART1 = new life(1400, 330);
+life HEART2 = new life(1500, 330);
+life HEART3 = new life(1600, 330);
 
 PORTAL p1 = new PORTAL(1160, 350, 3);
 int phoneX=450, phoneY=400, HTPX=100, HTPY=100, HTPAlpha=255, HTPDone;
@@ -24,6 +25,13 @@ PHONE P = new PHONE(phoneX, phoneY);
 void map1() {
   background(#2AC0F5);  
   //text(life,50,50);
+
+  if (pause==0) {
+    movement();
+  }
+  bordersAndCamera();
+
+
   scenery();
   cloud(100-.6*cameraX, C1Y);
   cloud(350-.6*cameraX, 50);
@@ -51,12 +59,15 @@ void map1() {
   deli(1190-cameraX, 50);
   tree(875-cameraX, 270);
 
-
-
-
-
-
-
+  if (NEW==1) {
+    time-=.033;
+    float min = time/60.0;
+    String sec = ""+(int)(time%60) + "" ;
+    if ((int)(time%60) < 10) {
+      sec = "0" + (int)(time%60);
+    }
+    text((int)min + ":" +sec, 200, 50);
+  }
   //deli(965-cameraX, 100);
   // tree(880-cameraX, 270);
   if (gx>=575) {
@@ -130,15 +141,20 @@ void map1() {
     }
   }
 
-  if (cSelect == 0)
-    harryDraw();
-  else
-    oliviaDraw();
+  println(life);
 
-  if (pause==0) {
-    movement();
+  if (life >0) {
+    if (cSelect == 0)
+      harryDraw();
+    else
+      oliviaDraw();
   }
-  bordersAndCamera();
+
+
+
+
+
+
   jump = 1;
   c1.update();
   if (NEW == 1) {
@@ -150,8 +166,7 @@ void map1() {
   HEART1.update();
   HEART2.update();
   HEART3.update();
-  if (gy>450) {
+  if (life <=0) {
     lose();
-    alive=0;
   }
 }

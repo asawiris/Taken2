@@ -32,7 +32,7 @@ void chooseCharacter() {
     page=1;
   }
   image(GIRL, 405, 250, 200, 200);
-  image(BOY, 200, 250, 200, 200);
+  image(BOY, 200, 250, 200,200);
   fill(#000000, alpha);
   rect(0, 0, 600, 400);
 }

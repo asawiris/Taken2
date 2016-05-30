@@ -1,5 +1,7 @@
-int dismiss=0, appear=1, pvy=5, comeUP, goDown, objective;
+int objective;
 int pAppear = 0;
+int nm = 0;
+int nm2=0;
 //1 is go up
 //2 is peak
 //3 go down
@@ -19,6 +21,8 @@ class PHONE {
       if (y<=251) {
         y=251;
         pAppear = 2;
+        nm = 1;
+        nm2=1;
       }
     }
     if (sp && pAppear == 2) {
@@ -37,24 +41,26 @@ class PHONE {
     rect(x+5, y+5, 100, 140, 12, 12, 12, 12);
     if (level==1 && NEW==1) {
       textFont(font, 12);
-      
-      if (objective==1){//get to daycare
-        fill(0);
-        text("New Objective!", x-18.5, y-13.5);
-        fill(#FFFF00);
-        text("New Objective!", x-20, y-15);
+
+      if (objective==1) {//get to daycare
+        if (nm2==0) {
+          fill(0);
+          text("New Objective!", x-18.5, y-13.5);
+          fill(#FFFF00);
+          text("New Objective!", x-20, y-15);
+        }
       }
     }
-    if (level==1 && NEW==0 && pAppear == 1) {
-      textFont(font, 12);
-      fill(0);
-      text("New Message!", x-13, y-13.5);
-      fill(#FFFF00);
-      text("New Message!", x-15, y-15);
-      
+    if (level==1 && NEW==0) {
+      if (nm == 0) {
+        textFont(font, 12);
+        fill(0);
+        text("New Message!", x-13, y-13.5);
+        fill(#FFFF00);
+        text("New Message!", x-15, y-15);
+      }
       textFont(font, 9);
       fill(#ffffff);
-      
       if (cSelect==1) {
         text("New Message\nfrom\nHarry:", x+7, y+25) ;
       }
@@ -66,7 +72,7 @@ class PHONE {
     if (level == 3 || NEW==1) {
       textFont(font, 9);
       fill(#ffffff);
-      text("New\nObjective:\n\nGet to\nthe daycare\ncenter!", x+9, y+25);
+      text("Objective:\n\nGet to\nthe daycare\ncenter!", x+9, y+25);
     }
   }
 }
