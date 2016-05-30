@@ -1,4 +1,4 @@
-int life=3;
+int life=39;
 
 class life {
   int x, y;
@@ -8,36 +8,33 @@ class life {
     y=_y;
   }
   void update() {
-    if(life==0){
-     //lose(); 
-     ALIVE=false;
-    }
-    if(life==1){
+    
+    if(life==17){
       image(HEART, 30, 30);
     }
-    if(life==2){
+    if(life==28){
       image(HEART, 30, 30);
       image(HEART, 60, 30);
     }
-    if(life==3){
+    if(life==39){
       image(HEART, 30, 30);
       image(HEART, 60, 30);
       image(HEART, 90, 30);
     }
-    if(life==4){
+    if(life==50){
       image(HEART, 30, 30);
       image(HEART, 60, 30);
       image(HEART, 90, 30);
       image(HEART, 120, 30);
     }
-    if(life==5){
+    if(life==61){
       image(HEART, 30, 30);
       image(HEART, 60, 30);
       image(HEART, 90, 30);
       image(HEART, 120, 30);
       image(HEART, 150, 30);
     }
-    if(life==6){
+    if(life==72){
       image(HEART, 30, 30);
       image(HEART, 60, 30);
       image(HEART, 90, 30);
@@ -49,7 +46,7 @@ class life {
     //rect(x-10-cameraX,y-10,20,20);
     if (showHeart==1 && dist(gx,gy,x,y)<30) {
       showHeart=0;
-      life++;
+      life+=11;
     }
     if (showHeart==1) {
       image(HEART, x-cameraX, y);

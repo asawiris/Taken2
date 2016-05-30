@@ -5,16 +5,26 @@
 float c2X=1000-cameraX;
 int change=30, change2=20;
 float time=300;
+color textC=(255);
 
-CLOUD c1 = new CLOUD(-100, 350, 4100, 2);
-CLOUD c2 = new CLOUD(1400, 280, 200, 1);
-CLOUD c3 = new CLOUD(1650, 250, 150, 1);
+
+
+CLOUD c1 = new CLOUD(-100, 350, 3900, 2);
+CLOUD c2 = new CLOUD(1600, 280, 200, 1);
+CLOUD c3 = new CLOUD(1950, 250, 150, 1);
+CLOUD cloud4 = new CLOUD(3800,370,50,2);
+CLOUD cloud5 = new CLOUD(3850,390,200,2);
+
+
+THWOMP t1 = new THWOMP(100,100,280);
+
 
 life HEART1 = new life(1400, 330);
 life HEART2 = new life(1500, 330);
 life HEART3 = new life(1600, 330);
 
 PORTAL p1 = new PORTAL(1160, 350, 3);
+PORTAL portal2 = new PORTAL(3900,390,2);
 int phoneX=450, phoneY=400, HTPX=100, HTPY=100, HTPAlpha=255, HTPDone;
 PHONE P = new PHONE(phoneX, phoneY);
 
@@ -30,8 +40,6 @@ void map1() {
     movement();
   }
   bordersAndCamera();
-
-
   scenery();
   cloud(100-.6*cameraX, C1Y);
   cloud(350-.6*cameraX, 50);
@@ -66,7 +74,17 @@ void map1() {
     if ((int)(time%60) < 10) {
       sec = "0" + (int)(time%60);
     }
-    text((int)min + ":" +sec, 200, 50);
+    
+    if(time<10){
+     textC = #FF0000; 
+    }
+    fill(textC);
+    textSize(15);
+    text((int)min + ":" +sec, 480, 40);
+  }
+  if(time <=0){
+    time=0;
+   life=6;
   }
   //deli(965-cameraX, 100);
   // tree(880-cameraX, 270);
@@ -141,16 +159,9 @@ void map1() {
     }
   }
 
-  println(life);
 
-  if (life >0) {
-    if (cSelect == 0)
-      harryDraw();
-    else
-      oliviaDraw();
-  }
-
-
+  
+ 
 
 
 
@@ -161,12 +172,23 @@ void map1() {
     c2.update();
     c3.update();
   }
+  t1.update();
+   cloud4.update();
+   cloud5.update();
   p1.update();
+  portal2.update();
   P.update();
   HEART1.update();
   HEART2.update();
   HEART3.update();
-  if (life <=0) {
+  if (life <=6) {
     lose();
   }
+  if (life > 6) {
+    if (cSelect == 0)
+      harryDraw();
+    else
+      oliviaDraw();
+  }
+
 }

@@ -15,7 +15,8 @@ class CLOUD {
     }
     fill(#989898);
     if (q==1) {
-      rect(x-cameraX, y, w, 5);
+      rect(x-cameraX, y, w, 10);
+      
     }
     if (q==2) {
       //2 is for floors

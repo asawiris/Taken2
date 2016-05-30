@@ -38,6 +38,8 @@ void setup() {
   HLEFT = loadImage("data/HLEFT.png");
   OLEFT = loadImage("data/OLEFT.png");
   HEART = loadImage("data/HEART.png");
+  WASH = loadImage("data/WASH.png");
+  WASHMAD = loadImage("data/WASHMAD.png");
 }
 
 PImage H1 = new PImage(62, 56, ARGB);//standing
@@ -60,7 +62,7 @@ PImage G7 = new PImage(62, 56, ARGB);//moving 2\
 PImage G8 = new PImage(62, 56, ARGB);
 PImage G9 = new PImage(62, 56, ARGB);//standing
 PImage G10 = new PImage(62, 56, ARGB);//standing
-PImage GIRL, BOY, CLOUD, TREE, CHOOSE, TITLE, RED, DELI, STOP, GREY, ORANGE, GREEN, TABLE, OSITTING, HSITTING, SBUB, SBUB2, CHAIR, HLEFT, OLEFT, HEART;
+PImage GIRL, BOY, CLOUD, TREE, CHOOSE, TITLE, RED, DELI, STOP, GREY, ORANGE, GREEN, TABLE, OSITTING, HSITTING, SBUB, SBUB2, CHAIR, HLEFT, OLEFT, HEART, WASH, WASHMAD;
 PFont font;
 int fadeC = 3;
 int alphaC = 255;
