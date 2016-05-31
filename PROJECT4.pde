@@ -1,16 +1,17 @@
 //github
 int phone=0;
-int page=1;
+int page=0;
 int pause = 0;
 int music=0;
 int nextLevel;
-int level = 2;
+int level = 1;
 int alive=1;
 boolean sp = false;
 
 
 void setup() {
   size(600, 400);
+  
   frameRate(30);
   noStroke();
   imageMode(CENTER);
@@ -42,6 +43,8 @@ void setup() {
   WASHMAD = loadImage("data/WASHMAD.png");
   TRAIN = loadImage("data/TRAIN.png");
   DAYCARE = loadImage("data/DAYCARE.png");
+  FOUND = loadImage("data/FOUND.png");
+  BABY = loadImage("data/BABY.png");
 }
 PImage H1 = new PImage(62, 56, ARGB);//standing
 PImage H2 = new PImage(62, 56, ARGB);//moving 1
@@ -63,7 +66,7 @@ PImage G7 = new PImage(62, 56, ARGB);//moving 2\
 PImage G8 = new PImage(62, 56, ARGB);
 PImage G9 = new PImage(62, 56, ARGB);//standing
 PImage G10 = new PImage(62, 56, ARGB);//standing
-PImage GIRL, BOY, CLOUD, TREE, CHOOSE, TITLE, RED, DELI, STOP, GREY, ORANGE, GREEN, TABLE, OSITTING, HSITTING, SBUB, SBUB2, CHAIR, HLEFT, OLEFT, HEART, WASH, WASHMAD, TRAIN, DAYCARE;
+PImage GIRL, BOY, CLOUD, TREE, CHOOSE, TITLE, RED, DELI, STOP, GREY, ORANGE, BABY, GREEN, TABLE, OSITTING, HSITTING, SBUB, SBUB2, CHAIR, HLEFT, OLEFT, HEART, WASH, WASHMAD, TRAIN, DAYCARE, FOUND;
 PFont font;
 int fadeC = 3;
 int alphaC = 255;
@@ -102,6 +105,9 @@ void fader() {
         if (level == 3) {
           gx=100;
         }
+        if(level==5){
+         gx=100; 
+        }
       }
     }
   }
@@ -118,6 +124,7 @@ void fader() {
 
 void draw() {
   noStroke();
+  textFont(font);
   if (page==0) {
     titlePage();
     //music=1;
@@ -134,6 +141,13 @@ void draw() {
     }
     if (level==4) {
       story();
+    }
+    if(level==5){
+     // map3();
+    daycare();
+    }
+    if(level==6){
+     WIN(); 
     }
     characterAnimation();
   }

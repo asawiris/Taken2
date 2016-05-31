@@ -9,9 +9,9 @@ color textC=(255);
 
 
 
-CLOUD c1 = new CLOUD(-100, 350, 3000, 2);
-CLOUD c2 = new CLOUD(1600, 280, 200, 1);
-CLOUD c3 = new CLOUD(1950, 250, 200, 1);
+    CLOUD c1 = new CLOUD(-100, 350, 3000, 2);
+    CLOUD c2 = new CLOUD(1600, 280, 200, 1);
+    CLOUD c3 = new CLOUD(1950, 250, 200, 1);
 CLOUD cloud4 = new CLOUD(3800, 350, 300, 2);
 CLOUD cloud6 = new CLOUD(2300, 220, 100, 1);
 
@@ -26,12 +26,12 @@ THWOMP t3 = new THWOMP(3400, 100, 280);
 
 prana pr1 = new prana(2935, 100, 275);
 prana pr2 = new prana(3240, 100, 275);
-prana pr3 = new prana(3535,100,275);
+prana pr3 = new prana(3535, 100, 275);
 
 
 life HEART1 = new life(2350, 205);
-life HEART2 = new life(1500, 330);
-life HEART3 = new life(1600, 330);
+
+
 
 PORTAL p1 = new PORTAL(1160, 350, 3);
 PORTAL portal2 = new PORTAL(3900, 350, 2);
@@ -175,14 +175,14 @@ void map1() {
 
 
 
- // if (NEW == 0 && gx>1295) {
-   // gx=1295;
- // }
+  if (NEW == 0 && gx>1295) {
+   gx=1295;
+  }
 
 
   jump = 1;
   c1.update();
-  if (NEW == 0) {
+  if (NEW == 1) {
     c2.update();
     c3.update();
     t1.update();
@@ -203,13 +203,13 @@ void map1() {
   cloud9.update();
   cloud4.update();
 
-
+  if(nm2==1){
   p1.update();
-pr3.update();
+  }
+  pr3.update();
   P.update();
   HEART1.update();
-  HEART2.update();
-  HEART3.update();
+
   if (life <=11) {
     lose();
   }

@@ -20,8 +20,8 @@ class THWOMP {
       tState=1;
     }
     if (tState==1) {
-      ty+=10;
-      image(WASHMAD,tx+32-cameraX,ty+25);
+      ty+=15;
+      image(WASHMAD,tx+32-cameraX,ty+18);
     }
     if (tState==1 && ty>ground) {
       ty=ground;

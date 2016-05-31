@@ -31,3 +31,6 @@ void daycare(float x, float y){
  textSize(15);
  text("DAYCARE",x-45,y-112);
 }
+void FOUND(float x, float y){
+image(FOUND,x,y);
+}
