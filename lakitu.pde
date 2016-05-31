@@ -6,7 +6,7 @@ float gravity=.8;
 float h = 30;
 color bc=#FF0A0A;
 int LAKITUalpha=130;
-float lax=400, lay = 50;
+float lax=1000, lay = 50;
 float bx, by, bvx, bvy=3;
 int bState = 0;
 int ground = 350;
@@ -19,7 +19,7 @@ float LAKITUct;
 
 void Lakitu() {
 
-  lax = lerp(lax-cameraX, cx, .1 );
+  lax = lerp(gx-cameraX, cx, .1 );
   //lax += .1*(cx-lax);
   if (bState == 0) {
     alpha=150;
@@ -76,13 +76,13 @@ void Lakitu() {
 
     text("BOOM!", bx-30, by-50);
   }
-
+println(bx);
 
   fill(255);
-  ellipse(lax-cameraX, lay, 50, 50);
-  ellipse(lax+10-cameraX, lay+6, 50, 50);
-  ellipse(lax-10-cameraX, lay+10, 50, 50);
-  ellipse(lax+20-cameraX, lay+9, 50, 50);
+  ellipse(lax, lay, 50, 50);
+  ellipse(lax+10, lay+6, 50, 50);
+  ellipse(lax-10, lay+10, 50, 50);
+  ellipse(lax+20, lay+9, 50, 50);
   fill(#000405);
   //rect(-1, ground+18, 801, 50);
 

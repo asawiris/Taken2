@@ -1,4 +1,3 @@
-//tab
 float C1Y=100;
 float ct=0;
 void scenery() {
@@ -24,4 +23,11 @@ void buildingGREEN(float x, float y) {
 }
 void deli(float x, float y) {
   image(DELI, x, y);
+}
+void daycare(float x, float y){
+ image(DAYCARE,x,y);
+ textFont(font);
+ fill(#F20DFF);
+ textSize(15);
+ text("DAYCARE",x-45,y-112);
 }

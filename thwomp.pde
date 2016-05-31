@@ -14,23 +14,14 @@ class THWOMP {
   void update() {
 
     fill(#3BFF50);
-    rect(tx-cameraX, ty, 70, 70,12,12,12,12);
-    image(WASH,tx-cameraX,ty);
+    rect(tx-cameraX, ty, 70, 70);
+    image(WASH,tx+32-cameraX,ty+32);
     if (tState==0 && gx > tx && gx< tx+70) {
       tState=1;
     }
     if (tState==1) {
       ty+=10;
-      fill(#FF3B55);
-      ellipse(tx+20-cameraX, ty+10, 20, 20);
-      fill(#000000);
-      ellipse(tx+20-cameraX, ty+10, 10, 10);
-      fill(#FF3B55);
-      ellipse(tx+50-cameraX, ty+10, 20, 20);
-      fill(#000000);
-      ellipse(tx+50-cameraX, ty+10, 10, 10);
-      fill(#FF3B55);
-      rect(tx+10-cameraX, ty+40, 50, 10);
+      image(WASHMAD,tx+32-cameraX,ty+25);
     }
     if (tState==1 && ty>ground) {
       ty=ground;

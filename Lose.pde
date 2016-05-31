@@ -35,7 +35,7 @@ void lose() {
   gy = lerp(gy,200,.05);
   
   
-  
+  fill(255);
   textSize(30);
   text("YOU LOST!", 192, 200);
 }
