@@ -1,92 +1,57 @@
-int showb=0;
-
-int cx, cy=350, cvy;
-float gravity=.8;
-
-float h = 30;
+int showb=0, cx, cy=350, cvy, LAKITUalpha=130, bState = 0, ground = 335;
+float gravity=.8, h = 30, lax=1000, lay = 50, bx, by, bvx, bvy=3, LAKITUct, LAKITUtime;
 color bc=#FF0A0A;
-int LAKITUalpha=130;
-float lax=1000, lay = 50;
-float bx, by, bvx, bvy=3;
-int bState = 0;
-int ground = 350;
-
 //0 ball is inside cloud
 //1 ball is ejected
-float LAKITUtime;
-float LAKITUct;
-
 
 void Lakitu() {
-
-  lax = lerp(gx-cameraX, cx, .1 );
-  //lax += .1*(cx-lax);
+  lax = lerp(lax, gx, .1 );
   if (bState == 0) {
-    alpha=150;
-    h=30;
-    //bh=30;
-    bx = lax-cameraX;
-    by = lay-cameraX;
-    //gx = lax-cameraX;
-    //gy = lay;
+    alpha = 150;
+    h = 30;
+    bx = lax;
+    by = lay;
     if (random(100) < 100) {
       bState = 1;
       bvx = - random(3);
-      bvy = -12;
+      bvy = - 12;
     }
   }
-
-
   if (bState == 1) {
-    bvy+=.5;
-    bx+=bvx;
-    by+=bvy;
+    bvy += .5;
+    bx += bvx;
+    by += bvy;
     if (by>ground) {
-      by=ground;
-      bvy=0;
-      bState=2;
-      bvx=0;
+      by = ground;
+      bvy = 0;
+      bState = 2;
+      bvx = 0;
     }
-   }
-
-
-  //text(time,50,50);
+  }
   if (bState==2) {
-
-    ct+=1;
-    by=by+2*sin(ct);
-    bx=bx+2*cos(ct);
-
-    time+=.033;
+    LAKITUct+=1;
+    by=by+2*sin(LAKITUct);
+    bx=bx+2*cos(LAKITUct);
+    LAKITUtime+=.033;
     alpha++;
     bvx++;
-
     if (bvx==90) {
       bState=3;
     }
   }
-
   if (bState==3) {
     h *=1.5;
     if (h > 200) {
-
       bState=0;
     }
-
-
-    text("BOOM!", bx-30, by-50);
+    text("BOOM!", bx-30-cameraX, by-50);
   }
-println(bx);
-
-  fill(255);
-  ellipse(lax, lay, 50, 50);
-  ellipse(lax+10, lay+6, 50, 50);
-  ellipse(lax-10, lay+10, 50, 50);
-  ellipse(lax+20, lay+9, 50, 50);
+  if(bState == 3 && dist(gx,gy,bx,by)<100){
+   lifeVAR-=2; 
+  }
+  println(lifeVAR);
+  image(HELI, lax-cameraX, lay);
   fill(#000405);
-  //rect(-1, ground+18, 801, 50);
-
-
   fill(bc, alpha);
-  ellipse(bx, by, h, h);
+  ellipse(bx-cameraX, by, h, h);
 }

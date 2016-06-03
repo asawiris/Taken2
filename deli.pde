@@ -11,7 +11,7 @@ void deli() {
   }
   fill(0);
   rect(17, 268, 65, 91);
-  fill(#1C5EFF);
+  fill(#5ecdff);
   rect(22, 273, 55, 91);
   fill(0);
   rect(22, 228, 56, 31);
@@ -20,20 +20,29 @@ void deli() {
   fill(#ff0000);
   textFont(font, 12);
   text("EXIT", 27.5, 250);
-  image(TABLE, storyX+240, storyY-39, 100, 100);
-  image(CHAIR, storyX+185, storyY-49, 100, 100);
- 
+  light(100,0);
+  light(300,0);
+  light(500,0);
+  image(TABLE, storyX+235, storyY-32,80,80);
+  image(CHAIR, storyX+183, storyY-40,80,80);
+  
+  image(TABLE, storyX+40, storyY-32,80,80);
+  image(CHAIR, storyX, storyY-40,80,80);
+  image(CHAIRLEFT, storyX+80,storyY-40,80,80);
+  
+  image(CHAIR, storyX+350,storyY-40,80,80);
+   image(TABLE, storyX+380, storyY-32,80,80);
+  
   if (cSelect==1) {
-    image(HLEFT, storyX+300, storyY-24, 75, 75);
+    image(HLEFT, storyX+285, storyY-22);
   }
   if (cSelect==0) {
-    image(OLEFT, storyX+300, storyY-24, 75, 75);
+    image(OLEFT, storyX+285, storyY-22);
   }
   if (cSelect == 0)
     harryDraw();
   else
     oliviaDraw();
-
   if (pause==0) {
     movement();
   }
@@ -42,4 +51,10 @@ void deli() {
   p2.update();
   PH2.update();
   bordersAndCamera();
+  if(gx<0){
+   gx=0; 
+  }
+  if(gx>width){
+   gx=width; 
+  }
 }

@@ -8,10 +8,10 @@ class PORTAL {
     y = _y;
     nextMap = _nextMap;
   }
+  
   void update() {
     if (dist(gx, gy, x+25, y)<5) {
       gx = x+25;
-      println(x);
       pause=1;
       if (fadeC == 0) {
         fadeC = 1;

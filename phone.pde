@@ -7,14 +7,15 @@ int nm2=0;
 //3 go down
 class PHONE {
   float x, y;
+
   PHONE(int _x, int _y) {
     x=_x;
     y=_y;
   }
+
   void update() {
     if (sp && pAppear == 0) {
       pAppear = 1;
-      // sp  = false;
     }
     if (pAppear == 1) {
       y=lerp(y, 250, .15);

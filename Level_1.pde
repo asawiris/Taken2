@@ -1,58 +1,34 @@
-//level1
-
-//int alpha2=255;
-//int alpha3=0;
-float c2X=1000-cameraX;
+float c2X=1000-cameraX, time=30;
 int change=30;
-float time=300;
 color textC=(255);
+int phoneX=450, phoneY=400, HTPX=100, HTPY=100, HTPAlpha=255, HTPDone;
 
-
-
-    CLOUD c1 = new CLOUD(-100, 350, 3000, 2);
-    CLOUD c2 = new CLOUD(1600, 280, 200, 1);
-    CLOUD c3 = new CLOUD(1950, 250, 200, 1);
+CLOUD c1 = new CLOUD(-100, 350, 3000, 2);
+CLOUD c2 = new CLOUD(1600, 280, 200, 1);
+CLOUD c3 = new CLOUD(1950, 250, 200, 1);
 CLOUD cloud4 = new CLOUD(3800, 350, 300, 2);
 CLOUD cloud6 = new CLOUD(2300, 220, 100, 1);
-
 CLOUD cloud7 = new CLOUD(3000, 350, 200, 2);
 CLOUD cloud8 = new CLOUD(3300, 350, 200, 2);
 CLOUD cloud9 = new CLOUD(3600, 350, 200, 2);
-
-
 THWOMP t1 = new THWOMP(1600, 100, 280);
 THWOMP t2 = new THWOMP(2500, 100, 280);
 THWOMP t3 = new THWOMP(3400, 100, 280);
-
 prana pr1 = new prana(2935, 100, 275);
 prana pr2 = new prana(3240, 100, 275);
 prana pr3 = new prana(3535, 100, 275);
-
-
 life HEART1 = new life(2350, 205);
-
-
-
 PORTAL p1 = new PORTAL(1160, 350, 3);
 PORTAL portal2 = new PORTAL(3900, 350, 2);
-int phoneX=450, phoneY=400, HTPX=100, HTPY=100, HTPAlpha=255, HTPDone;
 PHONE P = new PHONE(phoneX, phoneY);
-
-
-
 
 
 void map1() {
   background(#2AC0F5);  
-  //text(life,50,50);
-  //Lakitu();
-  println(gx, " ", gy);
-
   if (pause==0) {
     movement();
   }
   bordersAndCamera();
-
   cloud(100-.6*cameraX, 100);
   cloud(350-.6*cameraX, 50);
   cloud(600-.6*cameraX, 100 );
@@ -64,21 +40,12 @@ void map1() {
   cloud(2100-.6*cameraX, 100 );
   cloud(2350-.6*cameraX, 75);
   cloud(2600-.6*cameraX, 50 );
-
   buildingRED(600-cameraX, 225);
-
   buildingGREY(788-cameraX, 100);
-
-  // if(gx>200){
   buildingGREEN(970-cameraX, 200);
-  //}
-  // if(gx>200){
   buildingORANGE(1380-cameraX, 115);
-  // }
-
   deli(1190-cameraX, 50);
   tree(875-cameraX, 270);
-
   if (NEW==1) {
     time-=.033;
     float min = time/60.0;
@@ -86,7 +53,6 @@ void map1() {
     if ((int)(time%60) < 10) {
       sec = "0" + (int)(time%60);
     }
-
     if (time<10) {
       textC = #FF0000;
     }
@@ -96,15 +62,11 @@ void map1() {
   }
   if (time <=0 || gy>450) {
     time=0;
-    life=6;
+    lifeVAR=6;
   }
-  //deli(965-cameraX, 100);
-  // tree(880-cameraX, 270);
   if (gx>=575) {
     HTPDone=1;
   }
-
-  //#F7FF24
   fill(#000000, HTPAlpha);
   rect(HTPX-5, HTPY-5, 410, 210, 12, 12, 12, 12);
   fill(#2476FF, HTPAlpha);
@@ -119,24 +81,19 @@ void map1() {
   rect(HTPX+97, HTPY+40, 214, 6);
   fill(#ffffff, HTPAlpha);
   rect(HTPX+99, HTPY+41.5, 210, 3);
-
   textFont(font, 12);
   fill(#000000, HTPAlpha);
   text("Go Left", HTPX+9, HTPY+185-change);
   fill(#ffffff, HTPAlpha);
   text("Go Left", HTPX+7, HTPY+185-change);
-
   fill(#000000, HTPAlpha);
   text("Go Right", HTPX+157, HTPY+186-change);
   fill(#ffffff, HTPAlpha);
   text("Go Right", HTPX+155, HTPY+185-change);
-
   fill(#000000, HTPAlpha);
   text("Jump", HTPX+100, HTPY+121-change);
   fill(#ffffff, HTPAlpha);
   text("Jump", HTPX+98, HTPY+120-change);
-
-
   fill(#000000, HTPAlpha);
   text("Show/Hide\n  Phone", HTPX+267, HTPY+142);
   fill(#ffffff, HTPAlpha);
@@ -163,22 +120,15 @@ void map1() {
   fill(#ffffff, HTPAlpha);
   rect(HTPX+158, HTPY+142-change, 19, 5);
   triangle(HTPX+175, HTPY+154-change, HTPX+175, HTPY+135-change, HTPX+185, HTPY+144-change);
-
   if (HTPDone==1) {
     HTPAlpha-=10;
     if (HTPAlpha<=0) {
       HTPAlpha=0;
     }
   }
-
-
-
-
-
   if (NEW == 0 && gx>1295) {
-   gx=1295;
+    gx=1295;
   }
-
 
   jump = 1;
   c1.update();
@@ -190,33 +140,33 @@ void map1() {
     portal2.update();
     pr1.update();
     pr2.update();
-    //    cloud5.update();
     cloud6.update();
-
-    image(TRAIN, 3922-cameraX, 263);
-    textSize(15);
-    text("SUBWAY", 3895-cameraX, 259);
+    Lakitu();
   }
-
   cloud7.update();
   cloud8.update();
   cloud9.update();
   cloud4.update();
-
-  if(nm2==1){
-  p1.update();
+  if (nm2==1) {
+    p1.update();
   }
   pr3.update();
   P.update();
   HEART1.update();
-
-  if (life <=11) {
+  if (lifeVAR <=16) {
     lose();
   }
-  if (life > 11) {
+  if (lifeVAR > 16) {
     if (cSelect == 0)
       harryDraw();
     else
       oliviaDraw();
   }
+  if (lastLife==1 && lifeVAR<16) {
+    lose();
+  }
+  image(TRAIN, 3922-cameraX, 263);
+  fill(0);
+  textSize(15);
+  text("SUBWAY", 3895-cameraX, 259);
 }

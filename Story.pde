@@ -14,7 +14,11 @@ void story() {
   background(#FFFFFF);
   image(OSITTING, storyX, storyY, 150, 150);
   image(TABLE, storyX+74, storyY-10, 150, 150);
+  image(TABLE, storyX-220, storyY-10, 150, 150);
+  image(TABLE, storyX+375, storyY-10, 150, 150);
   image(HSITTING, storyX+150, storyY, 150, 150);
+  image(CHAIR,storyX+320,storyY-25,150,150);
+  image(CHAIRLEFT, storyX-165,storyY-25, 150, 150);
   if (talkVar == 1 || talkVar == 3 || talkVar == 5) {
     image(SBUB, 260, 260, 200, 200);
   }

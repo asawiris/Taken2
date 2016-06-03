@@ -5,5 +5,4 @@ void WIN(){
   image(BOY,500,250);
   fill(255);
   text("REUNITED!",170,100);
-  
 }

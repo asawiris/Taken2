@@ -1,15 +1,17 @@
 class prana {
+
   float px, py;
   int pState;
   int sky;
+
   prana(float _px, float _py, int _sky) {
     px=_px;
     py=_py;
     sky=_sky;
   }
+
   void update() {
-    
-    rect(px+12.5-cameraX,py+5,5,1000);
+    rect(px+12.5-cameraX, py+5, 5, 1000);
     fill(#FF0040);
     ellipse(px+15-cameraX, py+15, 30, 30);
     fill(#FFFFFF);
@@ -19,9 +21,6 @@ class prana {
     ellipse(px+10-cameraX, py+11, 4, 4);
     ellipse(px+20-cameraX, py+11, 4, 4);
     ellipse(px+15-cameraX, py+22, 15, 5);
-
-
-
     if (dist(cx+15, cy+15, px, py)<15) {
       cx=0;
       cy=420;
@@ -43,8 +42,8 @@ class prana {
       py=405;
       pState=0;
     }
-    if(dist(gx-cameraX,gy,px+15-cameraX, py+1)<20){
-     life--; 
+    if (dist(gx-cameraX, gy, px+15-cameraX, py+1)<20) {
+      lifeVAR--;
     }
   }
 }
