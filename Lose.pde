@@ -1,4 +1,5 @@
 //lose
+int rPlayX=280,rPlayY=210;
 void lose() {
   pause=2;
   if (cSelect==0) {
@@ -16,4 +17,5 @@ void lose() {
   fill(255);
   textSize(30);
   text("YOU LOST!", 192, 200);
+  image(restartButton,300,230);
 }

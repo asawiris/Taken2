@@ -31,7 +31,8 @@ class THWOMP {
       ty=50;
       tState=0;
     }
-    if (gx>tx && gx<tx+70 && gy-27>ty && gy-27<ty+70) {
+    if (hurt <= 0 && gx>tx && gx<tx+70 && gy-27>ty && gy-27<ty+70) {
+      hurt=30;
       lifeVAR-=1;
     }
   }

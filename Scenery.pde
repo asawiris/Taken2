@@ -1,24 +1,37 @@
 float C1Y=100;
 float ct=0;
+color b =(color(random(256),random(256),random(256)));
+color b2 =(color(random(256),random(256),random(256)));
+color b3 =(color(random(256),random(256),random(256)));
+color b4 =(color(random(256),random(256),random(256)));
+
 void scenery() {
 }
 void tree(float x, float y) {
   image(TREE, x, y);
 }
-void cloud(float x, float y) {
+void cloudPICTURE(float x, float y) {
   image(CLOUD, x, y);
 }
 void buildingRED(float x, float y) {
-  image(RED, x, y);
+  fill(b);
+  rect(x-100,y-110,200,400);
+  image(B1, x, y);
 }
 void buildingGREY(float x, float y) {
-  image(GREY, x, y);
+  fill(b2);
+  rect(x-90,y-90,175,400);
+  image(B2, x, y);
 }
 void buildingORANGE(float x, float y) {
-  image( ORANGE, x, y);
+  fill(b3);
+  rect(x-90,y-100,190,400);
+  image( B3, x, y);
 }
 void buildingGREEN(float x, float y) {
-  image(GREEN, x, y);
+  fill(b4);
+  rect(x-100,y-100,200,400);
+  image(B4, x, y);
 }
 void deli(float x, float y) {
   image(DELI, x, y);

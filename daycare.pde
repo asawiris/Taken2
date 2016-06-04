@@ -16,7 +16,7 @@ void daycare() {
   }  
   if (time <=0 || gy>450) {
     time=0;
-    lifeVAR=6;
+    lifeVAR=0;
   }
   bordersAndCamera();
   cloud16.update();

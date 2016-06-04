@@ -1,5 +1,5 @@
 int showb=0, cx, cy=350, cvy, LAKITUalpha=130, bState = 0, ground = 335;
-float gravity=.8, h = 30, lax=1000, lay = 50, bx, by, bvx, bvy=3, LAKITUct, LAKITUtime;
+float gravity=.8, h = 30, lax=4000, lay = 50, bx, by, bvx, bvy=3, LAKITUct, LAKITUtime;
 color bc=#FF0A0A;
 //0 ball is inside cloud
 //1 ball is ejected
@@ -46,10 +46,11 @@ void Lakitu() {
     }
     text("BOOM!", bx-30-cameraX, by-50);
   }
-  if(bState == 3 && dist(gx,gy,bx,by)<100){
-   lifeVAR-=2; 
+  if(hurt <= 0 && bState == 3 && dist(gx,gy,bx,by)<100){
+    hurt=30;
+    lifeVAR--; 
   }
-  println(lifeVAR);
+ 
   image(HELI, lax-cameraX, lay);
   fill(#000405);
   fill(bc, alpha);

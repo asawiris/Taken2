@@ -15,8 +15,10 @@ class CLOUD {
       jump = 0;
       gvy = 0;
     }
-    fill(#989898);
     if (q==1) {
+      fill(0);
+      rect(x-cameraX-2, y-2, w+4, 14);
+      fill(#989898);
       rect(x-cameraX, y, w, 10);
     }
     if (q==2) {
@@ -25,6 +27,11 @@ class CLOUD {
       rect(x-cameraX, y, w, 200);
       fill(#000000);
       rect(x-cameraX, y, w, 2);
+    }
+    if(q==3){
+      fill(0,0);
+      rect(x-cameraX-2, y-2, w+4, 14);
+     
     }
   }
 }

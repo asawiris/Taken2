@@ -3,9 +3,9 @@ float cloudX=125;
 
 void titlePage() {
   image(TITLE, 300, 200);
-  cloud(cloudX-100, 40);
-  cloud(cloudX+175, 95 );
-  cloud(cloudX+450, 70);
+  cloudPICTURE(cloudX-100, 40);
+  cloudPICTURE(cloudX+175, 95 );
+  cloudPICTURE(cloudX+450, 70);
   cloudX+=.5;
   if (cloudX>width+200) {
     cloudX=-300;

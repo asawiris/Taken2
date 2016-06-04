@@ -1,13 +1,13 @@
 //github
 //change cloud and basically all images 
 int phone=0;
-int page=1;
+int page=0;
 int pause = 0;
 int music=0;
 int nextLevel;
-int level = 3;
+int level = 1;
 boolean sp = false;
-
+int rPlayAlpha = 0, FADE;
 
 void setup() {
   size(600, 400);
@@ -22,10 +22,10 @@ void setup() {
   TREE = loadImage("data/TREE.png");
   CHOOSE = loadImage("data/CHOOSE.png");
   DELI = loadImage("data/DELI.png");
-  RED = loadImage("data/RED.png");
-  GREY = loadImage("data/GREY.png");
-  ORANGE = loadImage("data/ORANGE.png");
-  GREEN = loadImage("data/GREEN.png");
+  B1 = loadImage("data/BUILDING1.png");
+  B2 = loadImage("data/BUILDING2.png");
+  B3 = loadImage("data/BUILDING3.png");
+  B4 = loadImage("data/BUILDING4.png");
   TABLE = loadImage("data/TABLE.png");
   OSITTING = loadImage("data/OSITTING.png");
   HSITTING = loadImage("data/HSITTING.png");
@@ -44,6 +44,10 @@ void setup() {
   BABY = loadImage("data/BABY.png");
   HELI = loadImage("data/HELI.png");
   CHAIRLEFT = loadImage("data/CHAIRLEFT.png");
+  HSl = loadImage("data/HSl.png");
+  OSL = loadImage("data/OSL.png");
+  back = loadImage("data/back.jpg");
+  restartButton = loadImage("data/restart.png");
 }
 PImage H1 = new PImage(62, 56, ARGB);//standing
 PImage H2 = new PImage(62, 56, ARGB);//moving 1
@@ -65,10 +69,10 @@ PImage G7 = new PImage(62, 56, ARGB);//moving 2\
 PImage G8 = new PImage(62, 56, ARGB);
 PImage G9 = new PImage(62, 56, ARGB);//standing
 PImage G10 = new PImage(62, 56, ARGB);//standing
-PImage GIRL, CHAIRLEFT, BOY, CLOUD, TREE, CHOOSE, TITLE, RED, DELI, HELI, GREY, ORANGE, BABY, GREEN, TABLE, OSITTING, HSITTING, SBUB, SBUB2, CHAIR, HLEFT, OLEFT, HEART, WASH, WASHMAD, TRAIN, DAYCARE, FOUND;
+PImage GIRL, restartButton, back, CHAIRLEFT, BOY, CLOUD, TREE, OSL, HSl, CHOOSE, TITLE, B1, DELI, HELI, B2, B3, BABY, B4, TABLE, OSITTING, HSITTING, SBUB, SBUB2, CHAIR, HLEFT, OLEFT, HEART, WASH, WASHMAD, TRAIN, DAYCARE, FOUND;
 PFont font;
 int fadeC = 3;
-int alphaC = 255;
+int alphaC = 255, initiate=0;
 //1 start to fade to black
 //3 means you fade from black
 //0 means no fading occurs
@@ -82,6 +86,9 @@ void fader() {
     if (alphaC >=255) {//fully black
       alphaC = 255;
       fadeC = 3;
+
+
+
       if (page == 0) {
         page=3;
         goRight = 0;
@@ -104,8 +111,8 @@ void fader() {
         if (level == 3) {
           gx=100;
         }
-        if(level==5){
-         gx=100; 
+        if (level==5) {
+          gx=100;
         }
       }
     }
@@ -123,7 +130,9 @@ void fader() {
 
 void draw() {
   noStroke();
+
   textFont(font);
+  hurt--;
   if (page==0) {
     titlePage();
     //music=1;
@@ -141,12 +150,12 @@ void draw() {
     if (level==4) {
       story();
     }
-    if(level==5){
-     // map3();
-    daycare();
+    if (level==5) {
+      // map3();
+      daycare();
     }
-    if(level==6){
-     WIN(); 
+    if (level==6) {
+      WIN();
     }
     characterAnimation();
   }
@@ -179,8 +188,8 @@ void keyPressed() {
     if (key == 'p') {
       lifeVAR--;
     }
-    if(key == 'o'){
-     level=5; 
+    if (key == 'o') {
+      level=5;
     }
   }
 }
@@ -218,5 +227,17 @@ void mousePressed() {
       jadeRect=1;
       harryRect=0;
     }
+  }
+  if (mouseX>skipX && mouseX<skipX+40 && mouseY>skipY && mouseY<skipY+40) {
+    nextLevel = 1;
+    endStory=0;
+    NEW=1;
+    fadeC=1;
+  }
+  if (lifeVAR <1 && mouseX>rPlayX && mouseX<rPlayX+40 && mouseY>rPlayY && mouseY<rPlayY+40) {
+
+    initiate = 1;
+    
+    
   }
 }

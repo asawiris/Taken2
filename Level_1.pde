@@ -11,12 +11,12 @@ CLOUD cloud6 = new CLOUD(2300, 220, 100, 1);
 CLOUD cloud7 = new CLOUD(3000, 350, 200, 2);
 CLOUD cloud8 = new CLOUD(3300, 350, 200, 2);
 CLOUD cloud9 = new CLOUD(3600, 350, 200, 2);
-THWOMP t1 = new THWOMP(1600, 100, 280);
-THWOMP t2 = new THWOMP(2500, 100, 280);
-THWOMP t3 = new THWOMP(3400, 100, 280);
-prana pr1 = new prana(2935, 100, 275);
-prana pr2 = new prana(3240, 100, 275);
-prana pr3 = new prana(3535, 100, 275);
+THWOMP t1 = new THWOMP(1600, 100, 275);
+THWOMP t2 = new THWOMP(2500, 100, 275);
+THWOMP t3 = new THWOMP(3400, 100, 275);
+prana pr1 = new prana(2935, 100, 250);
+prana pr2 = new prana(3240, 100, 250);
+prana pr3 = new prana(3535, 100, 250);
 life HEART1 = new life(2350, 205);
 PORTAL p1 = new PORTAL(1160, 350, 3);
 PORTAL portal2 = new PORTAL(3900, 350, 2);
@@ -29,23 +29,29 @@ void map1() {
     movement();
   }
   bordersAndCamera();
-  cloud(100-.6*cameraX, 100);
-  cloud(350-.6*cameraX, 50);
-  cloud(600-.6*cameraX, 100 );
-  cloud(850-.6*cameraX, 75);
-  cloud(1100-.6*cameraX, 50 );
-  cloud(1350-.6*cameraX, 100);
-  cloud(1600-.6*cameraX, 75 );
-  cloud(1850-.6*cameraX, 50);
-  cloud(2100-.6*cameraX, 100 );
-  cloud(2350-.6*cameraX, 75);
-  cloud(2600-.6*cameraX, 50 );
-  buildingRED(600-cameraX, 225);
-  buildingGREY(788-cameraX, 100);
-  buildingGREEN(970-cameraX, 200);
-  buildingORANGE(1380-cameraX, 115);
-  deli(1190-cameraX, 50);
-  tree(875-cameraX, 270);
+  cloudPICTURE(100-.6*cameraX, 100);
+  cloudPICTURE(350-.6*cameraX, 50);
+  cloudPICTURE(600-.6*cameraX, 100 );
+  cloudPICTURE(850-.6*cameraX, 75);
+  cloudPICTURE(1100-.6*cameraX, 50 );
+  cloudPICTURE(1350-.6*cameraX, 100);
+  cloudPICTURE(1600-.6*cameraX, 75 );
+  cloudPICTURE(1850-.6*cameraX, 50);
+  cloudPICTURE(2100-.6*cameraX, 100 );
+  cloudPICTURE(2350-.6*cameraX, 75);
+  cloudPICTURE(2600-.6*cameraX, 50 );
+  buildingRED(560-cameraX, 190);
+  buildingGREY(770-cameraX, 100);
+  buildingGREEN(975-cameraX, 150);
+   deli(1190-cameraX, 50);
+  //buildingORANGE(1395-cameraX, 190);
+  
+  buildingRED(1625-cameraX, 190);
+  buildingGREY(350+1070-cameraX, 100);
+  //buildingGREEN(985+1070-cameraX, 150);
+  buildingORANGE(1195+1070-cameraX, 190);
+ 
+  tree(860-cameraX, 270);
   if (NEW==1) {
     time-=.033;
     float min = time/60.0;
@@ -62,7 +68,7 @@ void map1() {
   }
   if (time <=0 || gy>450) {
     time=0;
-    lifeVAR=6;
+    lifeVAR=0;
   }
   if (gx>=575) {
     HTPDone=1;
@@ -120,6 +126,14 @@ void map1() {
   fill(#ffffff, HTPAlpha);
   rect(HTPX+158, HTPY+142-change, 19, 5);
   triangle(HTPX+175, HTPY+154-change, HTPX+175, HTPY+135-change, HTPX+185, HTPY+144-change);
+  if(HTPDone==0){
+   HTPAlpha=255; 
+  }
+  
+  
+  
+  
+  
   if (HTPDone==1) {
     HTPAlpha-=10;
     if (HTPAlpha<=0) {
@@ -153,20 +167,31 @@ void map1() {
   pr3.update();
   P.update();
   HEART1.update();
-  if (lifeVAR <=16) {
+  if (lifeVAR <1) {
     lose();
   }
-  if (lifeVAR > 16) {
+  if (lifeVAR >= 1) {
     if (cSelect == 0)
       harryDraw();
     else
       oliviaDraw();
   }
+  /*
   if (lastLife==1 && lifeVAR<16) {
     lose();
   }
+  */
   image(TRAIN, 3922-cameraX, 263);
   fill(0);
   textSize(15);
   text("SUBWAY", 3895-cameraX, 259);
-}
+  
+  
+  
+  
+   ReplayAnimation();
+    
+  }
+
+
+  

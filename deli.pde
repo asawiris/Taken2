@@ -1,18 +1,24 @@
-CLOUD C10 = new CLOUD(-1000, 350, 6000, 2);
-PORTAL p2 = new PORTAL(25, 350, 1);
+CLOUD C10 = new CLOUD(-1000, 350, 6000, 3);
+PORTAL p2 = new PORTAL(25, 348, 1);
 PORTAL p3= new PORTAL(375, 350, 4);
 PHONE PH2 = new PHONE(phoneX, phoneY);
 
 void deli() {
   background(#FFFFFF);
+  image(back,300,200);
   fill(#000000);
   if (endStory==1) {
     p3.update();
   }
+ /*
+  if(gy>350){
+   gy=350; 
+  }
+  */
   fill(0);
-  rect(17, 268, 65, 91);
+  rect(17, 268, 65, 81);
   fill(#5ecdff);
-  rect(22, 273, 55, 91);
+  rect(22, 273, 55, 75);
   fill(0);
   rect(22, 228, 56, 31);
   fill(255);
@@ -20,9 +26,9 @@ void deli() {
   fill(#ff0000);
   textFont(font, 12);
   text("EXIT", 27.5, 250);
-  light(100,0);
-  light(300,0);
-  light(500,0);
+  light(20,-10);
+  light(250,-10);
+  light(500,-10);
   image(TABLE, storyX+235, storyY-32,80,80);
   image(CHAIR, storyX+183, storyY-40,80,80);
   
@@ -47,7 +53,7 @@ void deli() {
     movement();
   }
   jump = 1;
-  C10.update();
+ C10.update();
   p2.update();
   PH2.update();
   bordersAndCamera();

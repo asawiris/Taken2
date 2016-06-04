@@ -1,4 +1,4 @@
-int objective;
+
 int pAppear = 0;
 int nm = 0;
 int nm2=0;
@@ -43,7 +43,8 @@ class PHONE {
     if (level==1 && NEW==1) {
       textFont(font, 12);
 
-      if (objective==1) {//get to daycare
+     //get to daycare
+     if(level == 1 && NEW ==1){
         if (nm2==0) {
           fill(0);
           text("New Objective!", x-18.5, y-13.5);
@@ -52,6 +53,7 @@ class PHONE {
         }
       }
     }
+    
     if (level==1 && NEW==0) {
       if (nm == 0) {
         textFont(font, 12);

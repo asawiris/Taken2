@@ -15,22 +15,22 @@ PORTAL portal3 = new PORTAL(3220, 350, 5);
 
 void map2() {
   background(#9D74EA);
-  cloud(100-.6*cameraX, 1);
-  cloud(350-.6*cameraX, 50);
-  cloud(600-.6*cameraX, 100 );
-  cloud(850-.6*cameraX, 75);
-  cloud(1100-.6*cameraX, 50 );
-  cloud(1350-.6*cameraX, 100);
-  cloud(1600-.6*cameraX, 75 );
-  cloud(1850-.6*cameraX, 50);
-  cloud(2100-.6*cameraX, 100 );
-  cloud(2350-.6*cameraX, 75);
-  cloud(2600-.6*cameraX, 50 );
+  cloudPICTURE(100-.6*cameraX, 1);
+  cloudPICTURE(350-.6*cameraX, 50);
+  cloudPICTURE(600-.6*cameraX, 100 );
+  cloudPICTURE(850-.6*cameraX, 75);
+  cloudPICTURE(1100-.6*cameraX, 50 );
+  cloudPICTURE(1350-.6*cameraX, 100);
+  cloudPICTURE(1600-.6*cameraX, 75 );
+  cloudPICTURE(1850-.6*cameraX, 50);
+  cloudPICTURE(2100-.6*cameraX, 100 );
+  cloudPICTURE(2350-.6*cameraX, 75);
+  cloudPICTURE(2600-.6*cameraX, 50 );
   daycare(3250-cameraX, 190);
-  if (lifeVAR<=11) {
+  if (lifeVAR<1) {
     lose();
   }
-  if (lifeVAR> 11) {
+  if (lifeVAR> 0) {
     if (cSelect == 0)
       harryDraw();
     else
@@ -41,7 +41,7 @@ void map2() {
   }
   if (time <=0 || gy>450) {
     time=0;
-    lifeVAR=6;
+    lifeVAR=0;
   }
   bordersAndCamera();
   jump = 1;
@@ -61,4 +61,12 @@ void map2() {
   if (gy>450) {
     lose();
   }
+  ReplayAnimation();
 }
+
+
+
+  
+  
+  
+  

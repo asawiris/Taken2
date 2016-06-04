@@ -42,7 +42,8 @@ class prana {
       py=405;
       pState=0;
     }
-    if (dist(gx-cameraX, gy, px+15-cameraX, py+1)<20) {
+    if (hurt<=0 && dist(gx-cameraX, gy, px+15-cameraX, py+1)<20) {
+      hurt=30;
       lifeVAR--;
     }
   }
