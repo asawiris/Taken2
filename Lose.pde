@@ -1,4 +1,3 @@
-//lose
 int rPlayX=280,rPlayY=210;
 void lose() {
   pause=2;

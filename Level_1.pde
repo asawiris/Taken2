@@ -41,16 +41,16 @@ void map1() {
   cloudPICTURE(2350-.6*cameraX, 75);
   cloudPICTURE(2600-.6*cameraX, 50 );
   buildingRED(560-cameraX, 190);
-  buildingGREY(770-cameraX, 100);
+  buildingGREY(772-cameraX, 112);
   buildingGREEN(975-cameraX, 150);
-   deli(1190-cameraX, 50);
+  deli(1190-cameraX, 50);
   //buildingORANGE(1395-cameraX, 190);
-  
+
   buildingRED(1625-cameraX, 190);
-  buildingGREY(350+1070-cameraX, 100);
+  buildingGREY(325+1070-cameraX, 112);
   //buildingGREEN(985+1070-cameraX, 150);
   buildingORANGE(1195+1070-cameraX, 190);
- 
+
   tree(860-cameraX, 270);
   if (NEW==1) {
     time-=.033;
@@ -126,14 +126,9 @@ void map1() {
   fill(#ffffff, HTPAlpha);
   rect(HTPX+158, HTPY+142-change, 19, 5);
   triangle(HTPX+175, HTPY+154-change, HTPX+175, HTPY+135-change, HTPX+185, HTPY+144-change);
-  if(HTPDone==0){
-   HTPAlpha=255; 
+  if (HTPDone==0) {
+    HTPAlpha=255;
   }
-  
-  
-  
-  
-  
   if (HTPDone==1) {
     HTPAlpha-=10;
     if (HTPAlpha<=0) {
@@ -143,7 +138,6 @@ void map1() {
   if (NEW == 0 && gx>1295) {
     gx=1295;
   }
-
   jump = 1;
   c1.update();
   if (NEW == 1) {
@@ -176,22 +170,9 @@ void map1() {
     else
       oliviaDraw();
   }
-  /*
-  if (lastLife==1 && lifeVAR<16) {
-    lose();
-  }
-  */
   image(TRAIN, 3922-cameraX, 263);
   fill(0);
   textSize(15);
   text("SUBWAY", 3895-cameraX, 259);
-  
-  
-  
-  
-   ReplayAnimation();
-    
-  }
-
-
-  
+  ReplayAnimation();
+}

@@ -1,7 +1,5 @@
-//github
-//change cloud and basically all images 
 int phone=0;
-int page=0;
+int page=1;
 int pause = 0;
 int music=0;
 int nextLevel;
@@ -49,6 +47,7 @@ void setup() {
   back = loadImage("data/back.jpg");
   restartButton = loadImage("data/restart.png");
 }
+
 PImage H1 = new PImage(62, 56, ARGB);//standing
 PImage H2 = new PImage(62, 56, ARGB);//moving 1
 PImage H3 = new PImage(62, 56, ARGB);//moving 2\
@@ -86,9 +85,6 @@ void fader() {
     if (alphaC >=255) {//fully black
       alphaC = 255;
       fadeC = 3;
-
-
-
       if (page == 0) {
         page=3;
         goRight = 0;
@@ -130,7 +126,6 @@ void fader() {
 
 void draw() {
   noStroke();
-
   textFont(font);
   hurt--;
   if (page==0) {
@@ -165,8 +160,6 @@ void draw() {
   if (fadeC > 0) {
     fader();
   }
-  //fill(0);
-  //text(frameRate, 50, 50);
   sp  = false;
 }
 
@@ -235,9 +228,6 @@ void mousePressed() {
     fadeC=1;
   }
   if (lifeVAR <1 && mouseX>rPlayX && mouseX<rPlayX+40 && mouseY>rPlayY && mouseY<rPlayY+40) {
-
     initiate = 1;
-    
-    
   }
 }

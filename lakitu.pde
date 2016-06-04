@@ -46,11 +46,10 @@ void Lakitu() {
     }
     text("BOOM!", bx-30-cameraX, by-50);
   }
-  if(hurt <= 0 && bState == 3 && dist(gx,gy,bx,by)<100){
+  if (hurt <= 0 && bState == 3 && dist(gx, gy, bx, by)<100) {
     hurt=30;
-    lifeVAR--; 
+    lifeVAR--;
   }
- 
   image(HELI, lax-cameraX, lay);
   fill(#000405);
   fill(bc, alpha);

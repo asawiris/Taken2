@@ -5,6 +5,7 @@ int nm2=0;
 //1 is go up
 //2 is peak
 //3 go down
+
 class PHONE {
   float x, y;
 
@@ -43,8 +44,8 @@ class PHONE {
     if (level==1 && NEW==1) {
       textFont(font, 12);
 
-     //get to daycare
-     if(level == 1 && NEW ==1){
+      //get to daycare
+      if (level == 1 && NEW ==1) {
         if (nm2==0) {
           fill(0);
           text("New Objective!", x-18.5, y-13.5);
@@ -53,7 +54,6 @@ class PHONE {
         }
       }
     }
-    
     if (level==1 && NEW==0) {
       if (nm == 0) {
         textFont(font, 12);

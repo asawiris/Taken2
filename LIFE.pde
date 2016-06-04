@@ -48,22 +48,12 @@ class life {
       image(HEART, 150, 30);
       image(HEART, 180, 30);
     }
-    //rect(gx-17 - cameraX, gy-55, 30, 55);
-    //rect(x-10-cameraX,y-10,20,20);
     if (showHeart==1 && dist(gx, gy, x, y)<30) {
       showHeart=0;
       lifeVAR++;
     }
     if (showHeart==1) {
       image(HEART, x-cameraX, y);
-    }
-    println(rPlayAlpha, " ", initiate);
-    
+    }   
   }
 }
- 
-/*
-  when collision occurs: hurt=20 or {30} or 40
- hurt<=0
- hurt--; for the whole game
- */

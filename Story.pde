@@ -1,4 +1,4 @@
-int storyX=220, storyY=350, skipX=270,skipY=100, endStory=1, NEW, talkVar = 1;// 1 // 2// 3
+int storyX=220, storyY=350, skipX=270, skipY=100, endStory=1, NEW, talkVar = 1;// 1 // 2// 3
 float phraseVar = 0;
 
 String phrase1 = "Hey how are\nyou!How's\nyour day\nbeen?";
@@ -12,39 +12,33 @@ String phrase0 = phrase1;
 
 void story() {
   background(#FFFFFF);
-  image(back,300,200);
+  image(back, 300, 200);
   image(TABLE, storyX+74, storyY-10, 150, 150);
   image(TABLE, storyX-220, storyY-10, 150, 150);
   image(TABLE, storyX+375, storyY-10, 150, 150);
-  light(280,-20);
-  if(cSelect==0){
-  image(HSITTING, storyX+150, storyY, 150, 150);
-  image(OSITTING, storyX, storyY, 150, 150);
+  light(280, -20);
+  if (cSelect==0) {
+    image(HSITTING, storyX+150, storyY, 150, 150);
+    image(OSITTING, storyX, storyY, 150, 150);
   }
-  if(cSelect==1){
-    image(HSl,storyX, storyY, 150, 150);
-    image(OSL,storyX+150, storyY, 150, 150);
+  if (cSelect==1) {
+    image(HSl, storyX, storyY, 150, 150);
+    image(OSL, storyX+150, storyY, 150, 150);
   }
-  
-  image(CHAIR,storyX+320,storyY-25,150,150);
-  image(CHAIRLEFT, storyX-165,storyY-25, 150, 150);
+
+  image(CHAIR, storyX+320, storyY-25, 150, 150);
+  image(CHAIRLEFT, storyX-165, storyY-25, 150, 150);
   if (talkVar == 1 || talkVar == 3 || talkVar == 5) {
     image(SBUB, 260, 260, 200, 200);
   }
   if (talkVar == 2 || talkVar == 4 || talkVar == 6) {
     image(SBUB2, 330, 260, 200, 200);
   }
-  
-  
-  
   fill(0);
-  rect(skipX,skipY,10,40);
-  triangle(skipX+15,skipY,skipX+40,skipY+20,skipX+15,skipY+40);
-  
+  rect(skipX, skipY, 10, 40);
+  triangle(skipX+15, skipY, skipX+40, skipY+20, skipX+15, skipY+40);
   textSize(12);
-  text("Skip",skipX-4,skipY+55);
-  
-  
+  text("Skip", skipX-4, skipY+55);
   phraseVar+=1;
   if (phraseVar>= phrase0.length()) {
     phraseVar = phrase0.length();

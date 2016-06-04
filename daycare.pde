@@ -1,4 +1,3 @@
-
 CLOUD cloud16 = new CLOUD(-5, 350, 4000, 2);
 THWOMP t8 = new THWOMP(500, 100, 275);
 THWOMP t9 = new THWOMP(800, 100, 275);
@@ -34,5 +33,5 @@ void daycare() {
       harryDraw();
     else
       oliviaDraw();
-  }  
+  }
 }

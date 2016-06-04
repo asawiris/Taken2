@@ -1,4 +1,3 @@
-//portal
 class PORTAL {
   int x, y, i=0;
   int nextMap; //1 is map1, 2 is map2, 3 is map3...

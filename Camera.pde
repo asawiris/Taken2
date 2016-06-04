@@ -1,4 +1,3 @@
-//camera
 int mapWidth = 4000;
 float cameraX = 0;
 

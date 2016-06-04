@@ -5,16 +5,11 @@ PHONE PH2 = new PHONE(phoneX, phoneY);
 
 void deli() {
   background(#FFFFFF);
-  image(back,300,200);
+  image(back, 300, 200);
   fill(#000000);
   if (endStory==1) {
     p3.update();
   }
- /*
-  if(gy>350){
-   gy=350; 
-  }
-  */
   fill(0);
   rect(17, 268, 65, 81);
   fill(#5ecdff);
@@ -26,19 +21,16 @@ void deli() {
   fill(#ff0000);
   textFont(font, 12);
   text("EXIT", 27.5, 250);
-  light(20,-10);
-  light(250,-10);
-  light(500,-10);
-  image(TABLE, storyX+235, storyY-32,80,80);
-  image(CHAIR, storyX+183, storyY-40,80,80);
-  
-  image(TABLE, storyX+40, storyY-32,80,80);
-  image(CHAIR, storyX, storyY-40,80,80);
-  image(CHAIRLEFT, storyX+80,storyY-40,80,80);
-  
-  image(CHAIR, storyX+350,storyY-40,80,80);
-   image(TABLE, storyX+380, storyY-32,80,80);
-  
+  light(20, -10);
+  light(250, -10);
+  light(500, -10);
+  image(TABLE, storyX+235, storyY-32, 80, 80);
+  image(CHAIR, storyX+183, storyY-40, 80, 80);
+  image(TABLE, storyX+40, storyY-32, 80, 80);
+  image(CHAIR, storyX, storyY-40, 80, 80);
+  image(CHAIRLEFT, storyX+80, storyY-40, 80, 80);
+  image(CHAIR, storyX+350, storyY-40, 80, 80);
+  image(TABLE, storyX+380, storyY-32, 80, 80);
   if (cSelect==1) {
     image(HLEFT, storyX+285, storyY-22);
   }
@@ -53,14 +45,14 @@ void deli() {
     movement();
   }
   jump = 1;
- C10.update();
+  C10.update();
   p2.update();
   PH2.update();
   bordersAndCamera();
-  if(gx<0){
-   gx=0; 
+  if (gx<0) {
+    gx=0;
   }
-  if(gx>width){
-   gx=width; 
+  if (gx>width) {
+    gx=width;
   }
 }
