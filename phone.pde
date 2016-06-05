@@ -24,7 +24,9 @@ class PHONE {
         y=251;
         pAppear = 2;
         nm = 1;
+        if(NEW==1){
         nm2=1;
+        }
       }
     }
     if (sp && pAppear == 2) {
@@ -41,19 +43,19 @@ class PHONE {
     rect(x, y, 110, 160, 12, 12, 12, 12);
     fill(#000000);
     rect(x+5, y+5, 100, 140, 12, 12, 12, 12);
-    if (level==1 && NEW==1) {
-      textFont(font, 12);
 
-      //get to daycare
-      if (level == 1 && NEW ==1) {
-        if (nm2==0) {
-          fill(0);
-          text("New Objective!", x-18.5, y-13.5);
-          fill(#FFFF00);
-          text("New Objective!", x-20, y-15);
-        }
+    textFont(font, 12);
+
+    //get to daycare
+    if (level == 1 && NEW ==1) {
+      if (nm2==0) {
+        fill(0);
+        text("New Objective!", x-18.5, y-13.5);
+        fill(#FFFF00);
+        text("New Objective!", x-20, y-15);
       }
     }
+println(nm2);
     if (level==1 && NEW==0) {
       if (nm == 0) {
         textFont(font, 12);

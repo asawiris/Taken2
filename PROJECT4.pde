@@ -3,7 +3,7 @@ int page=1;
 int pause = 0;
 int music=0;
 int nextLevel;
-int level = 1;
+int level = 8;
 boolean sp = false;
 int rPlayAlpha = 0, FADE;
 int inStore = 0;
@@ -49,6 +49,7 @@ void setup() {
   back = loadImage("data/back.jpg");
   restartButton = loadImage("data/restart.png");
   storeImage = loadImage("data/STORE.png");
+  cashierImage = loadImage("data/cashier.png");
 }
 
 PImage H1 = new PImage(62, 56, ARGB);//standing
@@ -71,7 +72,7 @@ PImage G7 = new PImage(62, 56, ARGB);//moving 2\
 PImage G8 = new PImage(62, 56, ARGB);
 PImage G9 = new PImage(62, 56, ARGB);//standing
 PImage G10 = new PImage(62, 56, ARGB);//standing
-PImage GIRL, storeImage, restartButton, back, CHAIRLEFT, BOY, CLOUD, TREE, OSL, HSl, CHOOSE, TITLE, B1, DELI, HELI, B2, B3, BABY, B4, TABLE, OSITTING, HSITTING, SBUB, SBUB2, CHAIR, HLEFT, OLEFT, HEART, WASH, WASHMAD, TRAIN, DAYCARE, FOUND;
+PImage GIRL, storeImage, restartButton, cashierImage, back, CHAIRLEFT, BOY, CLOUD, TREE, OSL, HSl, CHOOSE, TITLE, B1, DELI, HELI, B2, B3, BABY, B4, TABLE, OSITTING, HSITTING, SBUB, SBUB2, CHAIR, HLEFT, OLEFT, HEART, WASH, WASHMAD, TRAIN, DAYCARE, FOUND;
 PFont font;
 int fadeC = 3;
 int alphaC = 255, initiate=0;

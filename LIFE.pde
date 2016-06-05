@@ -15,6 +15,10 @@ class life {
 
   void update() {
     textSize(12);
+    fill(0);
+    text("Money:$",17,62);
+    text(money,102,62);
+    fill(255);
     text("Money:$",15,60);
     text(money,100,60);
     if (lifeVAR==1) {

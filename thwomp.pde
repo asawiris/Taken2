@@ -1,7 +1,7 @@
 class THWOMP {
   float tx, ty;
   int tState = 0;
-  int ground, hurt=0;
+  int ground;
 
   THWOMP(float _tx, float _ty, int _ground) {
     tx=_tx;
@@ -35,5 +35,6 @@ class THWOMP {
       hurt=30;
       lifeVAR-=1;
     }
+    println(hurt);
   }
 }

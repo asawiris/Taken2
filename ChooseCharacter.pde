@@ -5,7 +5,7 @@ int harryRect=0, jadeRect=0, alpha, fade=0;
 int chosen=0, i = 0;
 
 void chooseCharacter() {
-  background(#2AC0F5);
+  //background(#2AC0F5);
   image(CHOOSE, 300, 200);
   if (chosen==0) {
     if (mouseX>harryX && mouseX<harryX+82 && mouseY>harryY && mouseY<harryY+175)     
@@ -16,9 +16,6 @@ void chooseCharacter() {
       jadeRect=1;
     else
       jadeRect=0;
-  }
-  if (fade==1) {
-    alpha+=10;
   }
   if (jadeRect==1) {
     for ( int i = 0; i < 20; i++) {
