@@ -27,6 +27,8 @@ void ReplayAnimation() {
     time=30;
     HTPDone=0;
     FADE = 2;
+    money=3;
+    speed=6;
   }
   if (FADE == 2) {
     rPlayAlpha-=10;

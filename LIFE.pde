@@ -14,6 +14,9 @@ class life {
   }
 
   void update() {
+    textSize(12);
+    text("Money:$",15,60);
+    text(money,100,60);
     if (lifeVAR==1) {
       image(HEART, 30, 30);
       //lastLife=1;

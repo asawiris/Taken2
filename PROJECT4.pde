@@ -1,11 +1,13 @@
 int phone=0;
-int page=0;
+int page=1;
 int pause = 0;
 int music=0;
 int nextLevel;
 int level = 1;
 boolean sp = false;
 int rPlayAlpha = 0, FADE;
+int inStore = 0;
+int money=3;
 
 void setup() {
   size(600, 400);
@@ -46,6 +48,7 @@ void setup() {
   OSL = loadImage("data/OSL.png");
   back = loadImage("data/back.jpg");
   restartButton = loadImage("data/restart.png");
+  storeImage = loadImage("data/STORE.png");
 }
 
 PImage H1 = new PImage(62, 56, ARGB);//standing
@@ -68,7 +71,7 @@ PImage G7 = new PImage(62, 56, ARGB);//moving 2\
 PImage G8 = new PImage(62, 56, ARGB);
 PImage G9 = new PImage(62, 56, ARGB);//standing
 PImage G10 = new PImage(62, 56, ARGB);//standing
-PImage GIRL, restartButton, back, CHAIRLEFT, BOY, CLOUD, TREE, OSL, HSl, CHOOSE, TITLE, B1, DELI, HELI, B2, B3, BABY, B4, TABLE, OSITTING, HSITTING, SBUB, SBUB2, CHAIR, HLEFT, OLEFT, HEART, WASH, WASHMAD, TRAIN, DAYCARE, FOUND;
+PImage GIRL, storeImage, restartButton, back, CHAIRLEFT, BOY, CLOUD, TREE, OSL, HSl, CHOOSE, TITLE, B1, DELI, HELI, B2, B3, BABY, B4, TABLE, OSITTING, HSITTING, SBUB, SBUB2, CHAIR, HLEFT, OLEFT, HEART, WASH, WASHMAD, TRAIN, DAYCARE, FOUND;
 PFont font;
 int fadeC = 3;
 int alphaC = 255, initiate=0;
@@ -97,7 +100,10 @@ void fader() {
         level = nextLevel; 
         if (level == 1) {
           if (NEW==1) {
-            gx=1300;
+            gx=2110;
+          }
+          if(NEW == 0 && inStore == 1){
+           gx = 1260; 
           }
         }
         if (level==2) {
@@ -110,6 +116,10 @@ void fader() {
         if (level==5) {
           gx=100;
         }
+        if(level==7){
+         gx =100; 
+        }
+       
       }
     }
   }
@@ -151,6 +161,18 @@ void draw() {
     }
     if (level==6) {
       WIN();
+    }
+    if(level == 7){
+     store(); 
+     
+    
+     
+     cameraX = 0;
+    }
+    if(level == 8){
+      BUYING();
+       inStore = 1;
+      
     }
     characterAnimation();
   }
@@ -229,5 +251,17 @@ void mousePressed() {
   }
   if (lifeVAR <1 && mouseX>rPlayX && mouseX<rPlayX+40 && mouseY>rPlayY && mouseY<rPlayY+40) {
     initiate = 1;
+  }
+  if(level==8 && mouseX>checkoutX && mouseX<checkoutX+270 && mouseY>checkoutY && mouseY<checkoutY+20){
+   level = 7; 
+   gx = 120;
+  }
+  if(level == 8 && money>=3 && mouseX>speedBoostX && mouseX<speedBoostX+90 && mouseY>speedBoostY && mouseY<speedBoostY+90){
+    money-=3;
+    speed+=1;
+  }
+  if(level == 8 && money>=3 && mouseX>healthBoostX && mouseX<healthBoostX+107 && mouseY>healthBoostY && mouseY<healthBoostY+80){
+    money-=3;
+    lifeVAR+=1;
   }
 }
