@@ -2,7 +2,6 @@ int lifeVAR=3;
 int lastLife;
 int hurt;
 
-
 class life {
 
   int x, y;
@@ -16,11 +15,11 @@ class life {
   void update() {
     textSize(12);
     fill(0);
-    text("Money:$",17,62);
-    text(money,102,62);
+    text("Money:$", 17, 62);
+    text(money, 102, 62);
     fill(255);
-    text("Money:$",15,60);
-    text(money,100,60);
+    text("Money:$", 15, 60);
+    text(money, 100, 60);
     if (lifeVAR==1) {
       image(HEART, 30, 30);
       //lastLife=1;
@@ -61,6 +60,6 @@ class life {
     }
     if (showHeart==1) {
       image(HEART, x-cameraX, y);
-    }   
+    }
   }
 }

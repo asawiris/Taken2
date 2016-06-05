@@ -8,7 +8,6 @@ class THWOMP {
     ty=_ty;
     ground=_ground;
   }
-
   void update() {
     fill(#3BFF50);
     rect(tx-cameraX, ty, 70, 70);
@@ -35,6 +34,5 @@ class THWOMP {
       hurt=30;
       lifeVAR-=1;
     }
-    println(hurt);
   }
 }

@@ -1,7 +1,7 @@
 //platform
 class CLOUD {
   int x, y, w, q;
-  
+
   CLOUD(int _x, int _y, int _w, int _q) {
     x = _x;
     y = _y;
@@ -28,10 +28,9 @@ class CLOUD {
       fill(#000000);
       rect(x-cameraX, y, w, 2);
     }
-    if(q==3){
-      fill(0,0);
+    if (q==3) {
+      fill(0, 0);
       rect(x-cameraX-2, y-2, w+4, 14);
-     
     }
   }
 }

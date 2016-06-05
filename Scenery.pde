@@ -1,7 +1,6 @@
 float C1Y=100;
 float ct=0;
 
-
 void tree(float x, float y) {
   image(TREE, x, y);
 }

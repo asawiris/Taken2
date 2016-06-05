@@ -23,10 +23,8 @@ PORTAL portal2 = new PORTAL(3900, 350, 2);
 PORTAL storePortal = new PORTAL(1226, 350, 7);
 PHONE P = new PHONE(phoneX, phoneY);
 
-
 void map1() {
   background(#2AC0F5); 
-
   if (pause==0) {
     movement();
   }
@@ -42,33 +40,24 @@ void map1() {
   cloudPICTURE(2100-.6*cameraX, 100 );
   cloudPICTURE(2350-.6*cameraX, 75);
   cloudPICTURE(2600-.6*cameraX, 50 );
-
   cloudPICTURE(2850-.6*cameraX, 75 );
   cloudPICTURE(3100-.6*cameraX, 50);
   cloudPICTURE(3350-.6*cameraX, 100 );
   cloudPICTURE(3600-.6*cameraX, 75);
   cloudPICTURE(3850-.6*cameraX, 50 );
-
   buildingRED(560-cameraX, 190, #08FFFD);
   buildingGREY(772-cameraX, 112, #AC08FF);
   buildingGREEN(975-cameraX, 150, #7EFF08);
   deli(2010-cameraX, 50);
-  //buildingORANGE(1395-cameraX, 190);
-
   buildingRED(1590-cameraX, 190, #FF7D3B);
   buildingGREY(325+1070-cameraX, 112, #024ECE);
   buildingGREY(735+1070-cameraX, 112, #CE029B);
-  //buildingORANGE(930+1070-cameraX, 190, #60CE02);
   fill(#00CFE0);
   rect(1080-cameraX, 80, 200, 500);
   image(storeImage, 1180-cameraX, 190);
-
   fill(0);
   textSize(25);
   text("STORE", 1125-cameraX, 140);
-  //buildingGREEN(985+1070-cameraX, 150);
-  //buildingGREEN(2223-cameraX, 150, #02CEAA);
-
   tree(860-cameraX, 270);
   if (NEW==1) {
     time-=.033;

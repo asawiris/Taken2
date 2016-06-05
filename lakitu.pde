@@ -3,7 +3,6 @@ float gravity=.8, h = 30, lax=4000, lay = 50, bx, by, bvx, bvy=3, LAKITUct, LAKI
 color bc=#FF0A0A;
 //0 ball is inside cloud
 //1 ball is ejected
-
 void Lakitu() {
   lax = lerp(lax, gx, .1 );
   if (bState == 0) {

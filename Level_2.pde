@@ -63,10 +63,3 @@ void map2() {
   }
   ReplayAnimation();
 }
-
-
-
-  
-  
-  
-  

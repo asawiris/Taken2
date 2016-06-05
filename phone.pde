@@ -1,11 +1,9 @@
-
 int pAppear = 0;
 int nm = 0;
 int nm2=0;
 //1 is go up
 //2 is peak
 //3 go down
-
 class PHONE {
   float x, y;
 
@@ -43,9 +41,7 @@ class PHONE {
     rect(x, y, 110, 160, 12, 12, 12, 12);
     fill(#000000);
     rect(x+5, y+5, 100, 140, 12, 12, 12, 12);
-
     textFont(font, 12);
-
     //get to daycare
     if (level == 1 && NEW ==1) {
       if (nm2==0) {
@@ -55,7 +51,6 @@ class PHONE {
         text("New Objective!", x-20, y-15);
       }
     }
-println(nm2);
     if (level==1 && NEW==0) {
       if (nm == 0) {
         textFont(font, 12);

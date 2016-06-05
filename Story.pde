@@ -25,7 +25,6 @@ void story() {
     image(HSl, storyX, storyY, 150, 150);
     image(OSL, storyX+150, storyY, 150, 150);
   }
-
   image(CHAIR, storyX+320, storyY-25, 150, 150);
   image(CHAIRLEFT, storyX-165, storyY-25, 150, 150);
   if (talkVar == 1 || talkVar == 3 || talkVar == 5) {

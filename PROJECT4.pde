@@ -103,8 +103,8 @@ void fader() {
           if (NEW==1) {
             gx=2110;
           }
-          if(NEW == 0 && inStore == 1){
-           gx = 1260; 
+          if (NEW == 0 && inStore == 1) {
+            gx = 1260;
           }
         }
         if (level==2) {
@@ -117,10 +117,9 @@ void fader() {
         if (level==5) {
           gx=100;
         }
-        if(level==7){
-         gx =100; 
+        if (level==7) {
+          gx =100;
         }
-       
       }
     }
   }
@@ -163,17 +162,13 @@ void draw() {
     if (level==6) {
       WIN();
     }
-    if(level == 7){
-     store(); 
-     
-    
-     
-     cameraX = 0;
+    if (level == 7) {
+      store(); 
+      cameraX = 0;
     }
-    if(level == 8){
+    if (level == 8) {
       BUYING();
-       inStore = 1;
-      
+      inStore = 1;
     }
     characterAnimation();
   }
@@ -253,15 +248,15 @@ void mousePressed() {
   if (lifeVAR <1 && mouseX>rPlayX && mouseX<rPlayX+40 && mouseY>rPlayY && mouseY<rPlayY+40) {
     initiate = 1;
   }
-  if(level==8 && mouseX>checkoutX && mouseX<checkoutX+270 && mouseY>checkoutY && mouseY<checkoutY+20){
-   level = 7; 
-   gx = 120;
+  if (level==8 && mouseX>checkoutX && mouseX<checkoutX+270 && mouseY>checkoutY && mouseY<checkoutY+20) {
+    level = 7; 
+    gx = 120;
   }
-  if(level == 8 && money>=3 && mouseX>speedBoostX && mouseX<speedBoostX+90 && mouseY>speedBoostY && mouseY<speedBoostY+90){
+  if (level == 8 && money>=3 && mouseX>speedBoostX && mouseX<speedBoostX+90 && mouseY>speedBoostY && mouseY<speedBoostY+90) {
     money-=3;
     speed+=1;
   }
-  if(level == 8 && money>=3 && mouseX>healthBoostX && mouseX<healthBoostX+107 && mouseY>healthBoostY && mouseY<healthBoostY+80){
+  if (level == 8 && money>=3 && mouseX>healthBoostX && mouseX<healthBoostX+107 && mouseY>healthBoostY && mouseY<healthBoostY+80) {
     money-=3;
     lifeVAR+=1;
   }
