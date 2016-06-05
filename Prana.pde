@@ -11,6 +11,7 @@ class prana {
   }
 
   void update() {
+    fill(0);
     rect(px+12.5-cameraX, py+5, 5, 1000);
     fill(#FF0040);
     ellipse(px+15-cameraX, py+15, 30, 30);

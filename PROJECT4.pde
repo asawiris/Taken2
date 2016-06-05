@@ -1,5 +1,5 @@
 int phone=0;
-int page=1;
+int page=0;
 int pause = 0;
 int music=0;
 int nextLevel;

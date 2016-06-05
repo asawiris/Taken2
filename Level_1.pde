@@ -4,27 +4,28 @@ color textC=(255);
 int phoneX=450, phoneY=400, HTPX=100, HTPY=100, HTPAlpha=255, HTPDone;
 
 CLOUD c1 = new CLOUD(-100, 350, 3000, 2);
-CLOUD c2 = new CLOUD(1600, 280, 200, 1);
-CLOUD c3 = new CLOUD(1950, 250, 200, 1);
+CLOUD c2 = new CLOUD(2200, 280, 200, 1);
+CLOUD c3 = new CLOUD(2550, 250, 200, 1);
 CLOUD cloud4 = new CLOUD(3800, 350, 300, 2);
-CLOUD cloud6 = new CLOUD(2300, 220, 100, 1);
+CLOUD cloud6 = new CLOUD(2900, 220, 100, 1);
 CLOUD cloud7 = new CLOUD(3000, 350, 200, 2);
 CLOUD cloud8 = new CLOUD(3300, 350, 200, 2);
 CLOUD cloud9 = new CLOUD(3600, 350, 200, 2);
-THWOMP t1 = new THWOMP(1600, 100, 275);
-THWOMP t2 = new THWOMP(2500, 100, 275);
-THWOMP t3 = new THWOMP(3400, 100, 275);
+THWOMP t1 = new THWOMP(2615, 100, 275);
+THWOMP t2 = new THWOMP(3060, 100, 275);
+THWOMP t3 = new THWOMP(3365, 100, 275);
 prana pr1 = new prana(2935, 100, 250);
 prana pr2 = new prana(3240, 100, 250);
 prana pr3 = new prana(3535, 100, 250);
-life HEART1 = new life(2350, 205);
+life HEART1 = new life(2950, 205);
 PORTAL p1 = new PORTAL(1160, 350, 3);
 PORTAL portal2 = new PORTAL(3900, 350, 2);
 PHONE P = new PHONE(phoneX, phoneY);
 
 
 void map1() {
-  background(#2AC0F5);  
+  background(#2AC0F5); 
+  println(gx);
   if (pause==0) {
     movement();
   }
@@ -40,16 +41,25 @@ void map1() {
   cloudPICTURE(2100-.6*cameraX, 100 );
   cloudPICTURE(2350-.6*cameraX, 75);
   cloudPICTURE(2600-.6*cameraX, 50 );
-  buildingRED(560-cameraX, 190);
-  buildingGREY(772-cameraX, 112);
-  buildingGREEN(975-cameraX, 150);
+  
+  cloudPICTURE(2850-.6*cameraX, 75 );
+  cloudPICTURE(3100-.6*cameraX, 50);
+  cloudPICTURE(3350-.6*cameraX, 100 );
+  cloudPICTURE(3600-.6*cameraX, 75);
+  cloudPICTURE(3850-.6*cameraX, 50 );
+  
+  buildingRED(560-cameraX, 190, #08FFFD);
+  buildingGREY(772-cameraX, 112, #AC08FF);
+  buildingGREEN(975-cameraX, 150, #7EFF08);
   deli(1190-cameraX, 50);
   //buildingORANGE(1395-cameraX, 190);
 
-  buildingRED(1625-cameraX, 190);
-  buildingGREY(325+1070-cameraX, 112);
+  buildingRED(1590-cameraX, 190, #FF7D3B);
+  buildingGREY(325+1070-cameraX, 112, #024ECE);
+   buildingGREY(735+1070-cameraX, 112, #CE029B);
   //buildingGREEN(985+1070-cameraX, 150);
-  buildingORANGE(1195+1070-cameraX, 190);
+  buildingORANGE(930+1070-cameraX, 190, #60CE02);
+  //buildingGREEN(2223-cameraX, 150, #02CEAA);
 
   tree(860-cameraX, 270);
   if (NEW==1) {
@@ -134,10 +144,7 @@ void map1() {
     if (HTPAlpha<=0) {
       HTPAlpha=0;
     }
-  }
-  if (NEW == 0 && gx>1295) {
-    gx=1295;
-  }
+  } 
   jump = 1;
   c1.update();
   if (NEW == 1) {
@@ -145,22 +152,26 @@ void map1() {
     c3.update();
     t1.update();
     t2.update();
+    t3.update();
     portal2.update();
     pr1.update();
     pr2.update();
     cloud6.update();
     Lakitu();
+    
+    pr3.update();
   }
   cloud7.update();
   cloud8.update();
   cloud9.update();
   cloud4.update();
+  HEART1.update();
   if (nm2==1) {
     p1.update();
   }
-  pr3.update();
+  
   P.update();
-  HEART1.update();
+  
   if (lifeVAR <1) {
     lose();
   }
@@ -174,5 +185,8 @@ void map1() {
   fill(0);
   textSize(15);
   text("SUBWAY", 3895-cameraX, 259);
+  if (NEW == 0 && gx>1295) {
+    gx=1295;
+  }
   ReplayAnimation();
 }
